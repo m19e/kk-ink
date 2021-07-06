@@ -7,6 +7,7 @@
 		"node": ">=8"
 	},
 	"scripts": {
+		"ex": "pastel build && node build/cli.js",
 		"dev": "pastel dev",
 		"build": "pastel build",
 		"prepare": "pastel build"
