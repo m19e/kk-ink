@@ -1,6 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 import { Text } from "ink";
 
-const Hello = ({ name = "stranger" }) => <Text>Hello, {name}</Text>;
+const Hello: FC<{ name?: string }> = ({ name = "Stranger" }) => (
+	<Text>Hello, {name}</Text>
+);
 
 export default Hello;
