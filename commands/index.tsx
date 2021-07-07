@@ -2,13 +2,13 @@ import React, { FC } from "react";
 import PropTypes from "prop-types";
 import { Text } from "ink";
 
-/// component desc test
+/// Hello world command
 const Hello: FC<{
 	name?: string;
 }> = ({ name = "Stranger" }) => <Text>Hello, {name}</Text>;
 
 Hello.propTypes = {
-	/// props desc test
+	/// Name of the person to greet
 	name: PropTypes.string,
 };
 
