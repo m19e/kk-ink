@@ -17,11 +17,13 @@
 	],
 	"dependencies": {
 		"ink": "^3.0.8",
+		"ink-spinner": "^4.0.2",
 		"pastel": "^1.1.1",
 		"prop-types": "^15.7.2",
 		"react": "^17.0.2"
 	},
 	"devDependencies": {
+		"@types/ink-spinner": "^3.0.0",
 		"@types/react": "^17.0.13",
 		"typescript": "^4.3.5"
 	}
