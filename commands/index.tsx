@@ -1,20 +1,20 @@
 import React, { FC } from "react";
 import PropTypes from "prop-types";
-import { Text, Newline } from "ink";
+import { Box, Text, Newline, Spacer } from "ink";
 import Spinner from "ink-spinner";
 
 /// Hello world command
 const Hello: FC<{
 	name?: string;
 }> = ({ name = "Stranger" }) => (
-	<Text>
-		Hello, {name}
-		<Newline />
+	<Box>
+		<Text>Hello, {name}</Text>
+		<Spacer />
 		<Text color="green">
 			<Spinner type="dots" />
 		</Text>
-		{" Loading"}
-	</Text>
+		<Text> Loading</Text>
+	</Box>
 );
 
 Hello.propTypes = {
