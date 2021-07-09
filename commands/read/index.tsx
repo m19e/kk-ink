@@ -19,10 +19,10 @@ const Read = ({ file }: Props) => {
 
 	const exist = existsSync(file);
 	if (!exist) {
-		return <Text>ファイルが見つかりませんでした……</Text>;
+		return <Text>見つかりませんでした……</Text>;
 	}
 
-	return <Text>「{file}」を読み込みますっ</Text>;
+	return <Text>「{file}」を読み込みます！</Text>;
 };
 
 Read.propTypes = {
