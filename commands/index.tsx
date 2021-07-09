@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import PropTypes from "prop-types";
-import { Box, Text, Newline, Spacer } from "ink";
+import { Box, Text, Spacer } from "ink";
 import Spinner from "ink-spinner";
 
 /// Hello world command
