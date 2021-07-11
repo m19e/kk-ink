@@ -33,8 +33,8 @@ const Read = ({ file }: Props) => {
 					</Gradient>
 				</Box>
 				<Box paddingBottom={1}>
-					<Box borderStyle="singleDouble" paddingX={2}>
-						<Text>CLI tool for Kanji check</Text>
+					<Box borderStyle="bold" paddingX={2}>
+						<Text bold>CLI tool for Kanji check</Text>
 					</Box>
 				</Box>
 			</Box>
