@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Box, Text } from "ink";
+import { useApp, useInput, Box, Text, Newline } from "ink";
 import Gradient from "ink-gradient";
 import BigText from "ink-big-text";
 import { extname } from "path";
@@ -41,6 +41,8 @@ const Read = ({ file }: Props) => {
 				</Box>
 			</Box>
 			<Text>「{file}」を読み込みます！</Text>
+			<Newline />
+			<Text>{buf}</Text>
 		</>
 	);
 };
