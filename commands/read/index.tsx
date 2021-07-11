@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Box, Text } from "ink";
+import Gradient from "ink-gradient";
+import BigText from "ink-big-text";
 import { extname } from "path";
 import { existsSync } from "fs";
 
@@ -24,6 +26,15 @@ const Read = ({ file }: Props) => {
 
 	return (
 		<>
+			<Gradient name="morning">
+				<BigText text="kk" />
+			</Gradient>
+			<Gradient name="fruit">
+				<BigText text="kk" />
+			</Gradient>
+			<Gradient name="summer">
+				<BigText text="kk" />
+			</Gradient>
 			<Text>「{file}」を読み込みます！</Text>
 			<Box flexDirection="column" padding={2}>
 				<Box>
