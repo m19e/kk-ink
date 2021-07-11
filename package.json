@@ -17,6 +17,8 @@
 	],
 	"dependencies": {
 		"ink": "^3.0.8",
+		"ink-big-text": "^1.2.0",
+		"ink-gradient": "^2.0.0",
 		"ink-spinner": "^4.0.2",
 		"pastel": "^1.1.1",
 		"prop-types": "^15.7.2",
