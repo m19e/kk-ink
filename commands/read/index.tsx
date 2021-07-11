@@ -35,9 +35,7 @@ const Read = ({ file }: Props) => {
 			<Gradient name="summer">
 				<BigText text="kk" />
 			</Gradient>
-			<Gradient name="fruit">
-				<Text>Kanji check for Kaho Komiya</Text>
-			</Gradient>
+			<Text color="redBright">- Kanji check for K.K. -</Text>
 			<Text>「{file}」を読み込みます！</Text>
 			<Box flexDirection="column" padding={2}>
 				<Box>
