@@ -34,7 +34,7 @@ const Read = ({ file }: Props) => {
 				</Box>
 				<Box paddingBottom={1}>
 					<Box borderStyle="singleDouble" paddingX={2}>
-						<Text>Kanji check for K.K.</Text>
+						<Text>CLI tool for Kanji check</Text>
 					</Box>
 				</Box>
 			</Box>
