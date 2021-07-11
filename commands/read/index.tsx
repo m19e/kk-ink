@@ -26,16 +26,18 @@ const Read = ({ file }: Props) => {
 
 	return (
 		<>
-			<Gradient name="morning">
-				<BigText text="kk" />
-			</Gradient>
-			<Gradient name="fruit">
-				<BigText text="kk" />
-			</Gradient>
-			<Gradient name="summer">
-				<BigText text="kk" />
-			</Gradient>
-			<Text color="redBright">- Kanji check for K.K. -</Text>
+			<Box paddingX={2} alignItems="center">
+				<Box marginRight={2}>
+					<Gradient name="fruit">
+						<BigText text="kk" />
+					</Gradient>
+				</Box>
+				<Box paddingBottom={1}>
+					<Box borderStyle="singleDouble" paddingX={2}>
+						<Text>Kanji check for K.K.</Text>
+					</Box>
+				</Box>
+			</Box>
 			<Text>「{file}」を読み込みます！</Text>
 			<Box flexDirection="column" padding={2}>
 				<Box>
