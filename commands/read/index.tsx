@@ -39,17 +39,6 @@ const Read = ({ file }: Props) => {
 				</Box>
 			</Box>
 			<Text>「{file}」を読み込みます！</Text>
-			<Box flexDirection="column" padding={2}>
-				<Box>
-					<Box borderStyle="singleDouble" marginRight={2} paddingX={2}>
-						<Text>singleDouble</Text>
-					</Box>
-
-					<Box borderStyle="bold" paddingX={2}>
-						<Text>bold</Text>
-					</Box>
-				</Box>
-			</Box>
 		</>
 	);
 };
