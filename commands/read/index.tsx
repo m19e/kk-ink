@@ -4,7 +4,7 @@ import { Box, Text } from "ink";
 import Gradient from "ink-gradient";
 import BigText from "ink-big-text";
 import { extname } from "path";
-import { existsSync } from "fs";
+import { existsSync, readFileSync } from "fs";
 
 type Props = {
 	file: string;
@@ -23,6 +23,8 @@ const Read = ({ file }: Props) => {
 	if (!exist) {
 		return <Text>見つかりませんでした……</Text>;
 	}
+
+	const buf = readFileSync(file, "utf-8");
 
 	return (
 		<>
