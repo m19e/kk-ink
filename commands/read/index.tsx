@@ -79,7 +79,7 @@ const Robot = () => {
 		<Box flexDirection="column">
 			<Text>Use arrow keys to move the face. Press “q” to exit.</Text>
 			<Box height={12} paddingLeft={x} paddingTop={y}>
-				<Text>^_^</Text>
+				<Text>✔️</Text>
 			</Box>
 		</Box>
 	);
