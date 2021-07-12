@@ -54,7 +54,7 @@ const Robot = () => {
 	const [y, setY] = useState(1);
 
 	useInput((input, key) => {
-		if (input === "q") {
+		if (input === "q" || key.return || key.escape) {
 			exit();
 		}
 
