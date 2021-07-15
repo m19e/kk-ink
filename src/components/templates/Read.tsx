@@ -9,6 +9,25 @@ type Props = {
 	file: string;
 };
 
+const isKanji = (c: string) => {
+	return c.match(
+		/[\u2E80-\u2FDF々〇〻\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF\u20000-\u2FFFF]/
+	);
+};
+
+const convert = (lines: string[]): string[] => {
+	const res = lines.map((line) => {
+		let text = "";
+		for (const c of [...line]) {
+			if (isKanji(c)) text += "k";
+			text += c;
+		}
+		return text;
+	});
+
+	return res;
+};
+
 const Read = ({ file }: Props) => {
 	const [loading, setLoading] = useState(true);
 	const [lines, setLines] = useState<string[]>([]);
@@ -28,7 +47,8 @@ const Read = ({ file }: Props) => {
 	useEffect(() => {
 		const buf = readFileSync(file, "utf-8");
 		const ls = buf.split("\n");
-		setLines(ls);
+		const ced = convert(ls);
+		setLines(ced);
 
 		setTimeout(() => {
 			setLoading(false);
