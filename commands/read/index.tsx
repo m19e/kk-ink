@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useApp, useInput, Box, Text, Newline } from "ink";
-import Gradient from "ink-gradient";
-import BigText from "ink-big-text";
 import { extname } from "path";
 import { existsSync, readFileSync } from "fs";
 
