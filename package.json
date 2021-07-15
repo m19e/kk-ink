@@ -21,6 +21,7 @@
 		"ink-form": "^1.0.1",
 		"ink-gradient": "^2.0.0",
 		"ink-spinner": "^4.0.2",
+		"ink-text-input": "^4.0.1",
 		"pastel": "^1.1.1",
 		"prop-types": "^15.7.2",
 		"react": "^17.0.2"
@@ -29,6 +30,7 @@
 		"@types/ink-big-text": "^1.2.1",
 		"@types/ink-gradient": "^2.0.1",
 		"@types/ink-spinner": "^3.0.0",
+		"@types/ink-text-input": "^2.0.2",
 		"@types/react": "^17.0.13",
 		"typescript": "^4.3.5"
 	}

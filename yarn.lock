@@ -1008,6 +1008,21 @@
     "@types/cli-spinners" "*"
     "@types/react" "*"
 
+"@types/ink-text-input@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/ink-text-input/-/ink-text-input-2.0.2.tgz#0ea371c5a9a9236421b1dd1d5342c30f3b9f63d6"
+  integrity sha512-pi59bgvumy6et1fWwybWd6lCu89rokkIUx5ydIIFkBJDcql+csoLpApfTuvj8qvdS2dJ9ujpV5tRt1s/9wBj7Q==
+  dependencies:
+    "@types/ink" "^0.5.2"
+
+"@types/ink@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@types/ink/-/ink-0.5.2.tgz#5e51b233d14639ee95df4d3c8b7f7845c51d094c"
+  integrity sha512-yEuhWTRMXJkIWiaM58c5kuRot5HFccv9kjjgy0fBZG0+tYb+sMBaxHNPVqyZXspGGlmwDOQ1d3BsygWpWlW17w==
+  dependencies:
+    "@types/node" "*"
+    "@types/prop-types" "*"
+
 "@types/lodash.isequal@^4.5.5":
   version "4.5.5"
   resolved "https://registry.yarnpkg.com/@types/lodash.isequal/-/lodash.isequal-4.5.5.tgz#4fed1b1b00bef79e305de0352d797e9bb816c8ff"
