@@ -38,6 +38,7 @@ const convert = (lines: string[]): string[] => {
 };
 
 const Read = ({ file }: Props) => {
+	const [data, setData] = useState("");
 	const [loading, setLoading] = useState(true);
 	const [lines, setLines] = useState<string[]>([]);
 
@@ -55,9 +56,10 @@ const Read = ({ file }: Props) => {
 
 	useEffect(() => {
 		const buf = readFileSync(file, "utf-8");
-		const ls = buf.split("\n");
-		const ced = convert(ls);
-		setLines(ced);
+		setData(buf);
+		// const ls = buf.split("\n");
+		// const ced = convert(ls);
+		// setLines(ls);
 
 		setLoading(false);
 	}, []);
@@ -76,9 +78,16 @@ const Read = ({ file }: Props) => {
 					<Logo />
 					<Text>「{file}」を読み込みます！</Text>
 					<Newline />
-					{lines.map((l) => (
-						<Text>{l}</Text>
-					))}
+					<Text>
+						{[...data].map((c, i) => (
+							<Text
+								key={i}
+								backgroundColor={isKanji(c) && !isCompulsory(c) ? "red" : ""}
+							>
+								{c}
+							</Text>
+						))}
+					</Text>
 				</>
 			)}
 		</>
