@@ -20,6 +20,8 @@ const isCompulsory = (c: string): boolean => COMPULSORY.includes(c);
 const isHiraKata = (c: string): boolean =>
 	/[\u3041-\u3096\u30A1-\u30FA]/.test(c);
 
+const isOK = (c: string): boolean => isHiraKata(c) || isCompulsory(c);
+
 const convert = (lines: string[]): string[] => {
 	const res = lines.map((line) => {
 		let text = "";
