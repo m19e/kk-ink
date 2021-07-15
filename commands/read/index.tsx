@@ -8,9 +8,7 @@ type Props = {
 };
 
 /// Read file command
-const Read = ({ file }: Props) => {
-	return <ReadCmd file={file} />;
-};
+const Read = ({ file }: Props) => <ReadCmd file={file} />;
 
 const Robot = () => {
 	const { exit } = useApp();
