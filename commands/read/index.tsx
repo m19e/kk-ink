@@ -6,6 +6,8 @@ import BigText from "ink-big-text";
 import { extname } from "path";
 import { existsSync, readFileSync } from "fs";
 
+import Logo from "../../src/components/atoms/Logo";
+
 type Props = {
 	file: string;
 };
@@ -28,18 +30,7 @@ const Read = ({ file }: Props) => {
 
 	return (
 		<>
-			<Box paddingX={2} alignItems="center">
-				<Box marginRight={2}>
-					<Gradient name="fruit">
-						<BigText text="kk" />
-					</Gradient>
-				</Box>
-				<Box paddingBottom={1}>
-					<Box borderStyle="singleDouble" paddingX={2}>
-						<Text bold>CLI tool for Kanji check</Text>
-					</Box>
-				</Box>
-			</Box>
+			<Logo />
 			<Text>「{file}」を読み込みます！</Text>
 			<Newline />
 			<Text>{buf}</Text>
