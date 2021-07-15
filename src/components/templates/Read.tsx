@@ -3,6 +3,7 @@ import { Text, Newline } from "ink";
 import Spinner from "ink-spinner";
 import { extname } from "path";
 import { existsSync, readFileSync } from "fs";
+import { COMPULSORY } from "../../consts";
 import Logo from "../atoms/Logo";
 
 type Props = {
@@ -13,6 +14,8 @@ const isKanji = (c: string): boolean =>
 	/[\u2E80-\u2FDF々〇〻\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF\u20000-\u2FFFF]/.test(
 		c
 	);
+
+const isCompulsory = (c: string): boolean => COMPULSORY.includes(c);
 
 const convert = (lines: string[]): string[] => {
 	const res = lines.map((line) => {
