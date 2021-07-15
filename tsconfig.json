@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "esModuleInterop": true,
-    "baseUrl": "src"
+    "esModuleInterop": true
   }
 }
