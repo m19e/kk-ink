@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { useApp, useInput, Box, Text, Newline } from "ink";
-import { extname } from "path";
-import { existsSync, readFileSync } from "fs";
-
-import Logo from "../../src/components/atoms/Logo";
+import { useApp, useInput, Box, Text } from "ink";
 import ReadCmd from "../../src/components/templates/Read";
 
 type Props = {
