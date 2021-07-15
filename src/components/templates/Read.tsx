@@ -9,11 +9,10 @@ type Props = {
 	file: string;
 };
 
-const isKanji = (c: string) => {
-	return c.match(
-		/[\u2E80-\u2FDF々〇〻\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF\u20000-\u2FFFF]/
+const isKanji = (c: string): boolean =>
+	/[\u2E80-\u2FDF々〇〻\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF\u20000-\u2FFFF]/.test(
+		c
 	);
-};
 
 const convert = (lines: string[]): string[] => {
 	const res = lines.map((line) => {
