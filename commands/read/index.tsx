@@ -5,6 +5,7 @@ import { extname } from "path";
 import { existsSync, readFileSync } from "fs";
 
 import Logo from "../../src/components/atoms/Logo";
+import ReadCmd from "../../src/components/templates/Read";
 
 type Props = {
 	file: string;
@@ -12,29 +13,7 @@ type Props = {
 
 /// Read file command
 const Read = ({ file }: Props) => {
-	if (
-		typeof file !== "string" ||
-		(extname(file) !== ".txt" && extname(file) !== ".md")
-	) {
-		return <Text color="red">ファイルを指定してくださいっ</Text>;
-	}
-
-	const exist = existsSync(file);
-	if (!exist) {
-		return <Text>見つかりませんでした……</Text>;
-	}
-
-	const buf = readFileSync(file, "utf-8");
-
-	return (
-		<>
-			<Logo />
-			<Text>「{file}」を読み込みます！</Text>
-			<Newline />
-			<Text>{buf}</Text>
-			<Robot />
-		</>
-	);
+	return <ReadCmd file={file} />;
 };
 
 const Robot = () => {
