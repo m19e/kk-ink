@@ -28,7 +28,7 @@ const convert = (lines: string[]): string[] => {
 	const res = lines.map((line) => {
 		let text = "";
 		for (const c of [...line]) {
-			if (isKanji(c)) text += "k";
+			if (isKanji(c) && !isCompulsory(c)) text += "k";
 			text += c;
 		}
 		return text;
