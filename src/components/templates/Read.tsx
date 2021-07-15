@@ -50,9 +50,7 @@ const Read = ({ file }: Props) => {
 		const ced = convert(ls);
 		setLines(ced);
 
-		setTimeout(() => {
-			setLoading(false);
-		}, 2000);
+		setLoading(false);
 	}, []);
 
 	return (
