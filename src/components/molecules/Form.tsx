@@ -1,5 +1,6 @@
 import React from "react";
-import { Form } from "ink-form";
+import { Form, AbstractFormField } from "ink-form";
+import TextInput from "ink-text-input";
 
 const options = [
 	{ label: "Millenium Falcon", value: "falcon" },
@@ -8,7 +9,7 @@ const options = [
 	{ label: "Raizorcrest", value: "mando" },
 ];
 
-const FormDemo = () => (
+const FormDemoOverview = () => (
 	<Form
 		onSubmit={(value) => console.log(`Submitted: `, value)}
 		form={{
@@ -95,4 +96,54 @@ const FormDemo = () => (
 		}}
 	/>
 );
-export default FormDemo;
+
+type CustomField = AbstractFormField<"custom", string> & { length: number };
+
+const FormDemoCustom = () => (
+	<Form
+		onSubmit={(value) => console.log(`Submitted: `, value)}
+		customManagers={[
+			{
+				type: "custom",
+				renderValue: ({ value, field }) => <>{value}</>,
+				renderField: (props) => (
+					<TextInput
+						value={props.value ?? ""}
+						onChange={(value) => {
+							props.onChange(value);
+
+							if (value.length > props.field.length) {
+								props.onError(
+									`Value is too long, should be less or equal than ${props.field.length}`
+								);
+							} else {
+								props.onClearError();
+							}
+						}}
+						placeholder={props.field.placeholder}
+					/>
+				),
+			} as any,
+		]}
+		form={{
+			title: "Custom Form Field Manager",
+			sections: [
+				{
+					title: "Main",
+					description:
+						"Demonstration of how custom field implementations can be used.",
+					fields: [
+						{
+							type: "custom",
+							name: "Custom field",
+							length: 10,
+							description: "I may not be longer than 10 characters",
+						} as CustomField as any,
+					],
+				},
+			],
+		}}
+	/>
+);
+
+export default FormDemoCustom;
