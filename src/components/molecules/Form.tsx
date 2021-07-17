@@ -108,7 +108,7 @@ const FormDemoCustom = () => (
 				type: "custom",
 				renderValue: ({ value, field }) => <>{value}</>,
 				renderField: (props) => (
-					<Box paddingY={1}>
+					<Box padding={1}>
 						<TextInput
 							value={props.value ?? ""}
 							onChange={(value) => {
