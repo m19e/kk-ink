@@ -1,4 +1,5 @@
 import React from "react";
+import { Box } from "ink";
 import { Form, AbstractFormField } from "ink-form";
 import TextInput from "ink-text-input";
 
@@ -107,21 +108,21 @@ const FormDemoCustom = () => (
 				type: "custom",
 				renderValue: ({ value, field }) => <>{value}</>,
 				renderField: (props) => (
-					<TextInput
-						value={props.value ?? ""}
-						onChange={(value) => {
-							props.onChange(value);
+					<Box paddingY={1}>
+						<TextInput
+							value={props.value ?? ""}
+							onChange={(value) => {
+								props.onChange(value);
 
-							if (value.length > props.field.length) {
-								props.onError(
-									`Value is too long, should be less or equal than ${props.field.length}`
-								);
-							} else {
-								props.onClearError();
-							}
-						}}
-						placeholder={props.field.placeholder}
-					/>
+								if (!value.match(props.field.regex)) {
+									props.onError(`Invaid value, should be Hiragana or Katakana`);
+								} else {
+									props.onClearError();
+								}
+							}}
+							placeholder={props.field.placeholder}
+						/>
+					</Box>
 				),
 			} as any,
 		]}
@@ -137,7 +138,8 @@ const FormDemoCustom = () => (
 							type: "custom",
 							name: "Custom field",
 							length: 10,
-							description: "I may not be longer than 10 characters",
+							description: "Hiragana or Katakana",
+							regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
 						} as CustomField as any,
 					],
 				},
