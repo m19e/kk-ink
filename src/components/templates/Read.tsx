@@ -4,6 +4,7 @@ import Spinner from "ink-spinner";
 import { extname } from "path";
 import { existsSync, readFileSync } from "fs";
 import { COMPULSORY } from "../../consts";
+import Form from "../molecules/Form";
 import Logo from "../atoms/Logo";
 
 type Props = {
@@ -76,7 +77,7 @@ const Read = ({ file }: Props) => {
 			) : (
 				<>
 					<Logo />
-					<Text>「{file}」を読み込みます！</Text>
+					{/* <Text>「{file}」を読み込みます！</Text>
 					<Newline />
 					<Text>
 						{[...data].map((c, i) => (
@@ -87,7 +88,8 @@ const Read = ({ file }: Props) => {
 								{c}
 							</Text>
 						))}
-					</Text>
+					</Text> */}
+					<Form />
 				</>
 			)}
 		</>
