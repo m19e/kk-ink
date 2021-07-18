@@ -73,6 +73,31 @@ const FormDemoCustom = () => (
 						},
 					] as CustomField[],
 				},
+				{
+					title: "Sub",
+					description:
+						"Demonstration of how custom field implementations can be used.",
+					fields: [
+						{
+							type: "custom",
+							name: "読めない漢字4",
+							description: "Hiragana or Katakana",
+							regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
+						},
+						{
+							type: "custom",
+							name: "読めない漢字5",
+							description: "Hiragana or Katakana",
+							regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
+						},
+						{
+							type: "custom",
+							name: "読めない漢字6",
+							description: "Hiragana or Katakana",
+							regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
+						},
+					] as CustomField[],
+				},
 			],
 		}}
 	/>
