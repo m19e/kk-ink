@@ -1,6 +1,12 @@
 import React from "react";
 import { Box } from "ink";
-import { Form, AbstractFormField } from "../../ink/form";
+import {
+	Form,
+	AbstractFormField,
+	FormFieldString,
+	FormFieldValueRendererProps,
+	SpecificFormFieldRendererProps,
+} from "../../ink/form";
 import TextInput from "ink-text-input";
 
 type CustomField = AbstractFormField<"custom", string>;
@@ -11,21 +17,29 @@ const FormDemoCustom = () => (
 		customManagers={[
 			{
 				type: "custom",
-				renderValue: ({ value, field }) => <>{value}</>,
-				renderField: (props) => (
+				renderValue: ({
+					value,
+				}: FormFieldValueRendererProps<FormFieldString>) => <>{value}</>,
+				renderField: ({
+					value,
+					field: { regex, placeholder },
+					onChange,
+					onError,
+					onClearError,
+				}: SpecificFormFieldRendererProps<FormFieldString>) => (
 					<Box padding={1}>
 						<TextInput
-							value={props.value ?? ""}
+							value={value ?? ""}
 							onChange={(value) => {
-								props.onChange(value);
+								onChange(value);
 
-								if (!value.match(props.field.regex)) {
-									props.onError(`Invaid value, should be Hiragana or Katakana`);
+								if (!value.match(regex)) {
+									onError(`Invaid value, should be Hiragana or Katakana`);
 								} else {
-									props.onClearError();
+									onClearError();
 								}
 							}}
-							placeholder={props.field.placeholder}
+							placeholder={placeholder}
 						/>
 					</Box>
 				),
