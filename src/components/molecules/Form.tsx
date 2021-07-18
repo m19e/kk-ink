@@ -9,7 +9,7 @@ import {
 } from "../../ink/form";
 import TextInput from "ink-text-input";
 
-type CustomField = AbstractFormField<"custom", string>;
+type CustomField = AbstractFormField<"custom", string> & { regex: RegExp };
 
 const FormDemoCustom = () => (
 	<Form
@@ -58,20 +58,20 @@ const FormDemoCustom = () => (
 							name: "読めない漢字1",
 							description: "Hiragana or Katakana",
 							regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
-						} as CustomField,
+						},
 						{
 							type: "custom",
 							name: "読めない漢字2",
 							description: "Hiragana or Katakana",
 							regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
-						} as CustomField,
+						},
 						{
 							type: "custom",
 							name: "読めない漢字3",
 							description: "Hiragana or Katakana",
 							regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
-						} as CustomField,
-					],
+						},
+					] as CustomField[],
 				},
 			],
 		}}
