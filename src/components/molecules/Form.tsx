@@ -41,7 +41,7 @@ const FormDemoCustom = () => (
 					fields: [
 						{
 							type: "custom",
-							name: "Custom field",
+							name: "(読めない漢字)",
 							length: 10,
 							description: "Hiragana or Katakana",
 							regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
