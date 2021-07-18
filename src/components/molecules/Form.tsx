@@ -3,7 +3,7 @@ import { Box } from "ink";
 import { Form, AbstractFormField } from "../../ink/form";
 import TextInput from "ink-text-input";
 
-type CustomField = AbstractFormField<"custom", string> & { length: number };
+type CustomField = AbstractFormField<"custom", string>;
 
 const FormDemoCustom = () => (
 	<Form
@@ -42,21 +42,18 @@ const FormDemoCustom = () => (
 						{
 							type: "custom",
 							name: "読めない漢字1",
-							length: 10,
 							description: "Hiragana or Katakana",
 							regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
 						} as CustomField as any,
 						{
 							type: "custom",
 							name: "読めない漢字2",
-							length: 10,
 							description: "Hiragana or Katakana",
 							regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
 						} as CustomField as any,
 						{
 							type: "custom",
 							name: "読めない漢字3",
-							length: 10,
 							description: "Hiragana or Katakana",
 							regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
 						} as CustomField as any,
