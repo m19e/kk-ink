@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "ink";
-import { Form, AbstractFormField } from "ink-form";
+import { Form, AbstractFormField } from "../../ink/form";
 import TextInput from "ink-text-input";
 
 const options = [
