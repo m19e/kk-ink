@@ -77,18 +77,6 @@ const Read = ({ file }: Props) => {
 			) : (
 				<>
 					<Logo />
-					{/* <Text>「{file}」を読み込みます！</Text>
-					<Newline />
-					<Text>
-						{[...data].map((c, i) => (
-							<Text
-								key={i}
-								backgroundColor={isKanji(c) && !isCompulsory(c) ? "red" : ""}
-							>
-								{c}
-							</Text>
-						))}
-					</Text> */}
 					<Form />
 				</>
 			)}
