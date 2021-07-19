@@ -32,7 +32,7 @@ type LineData = {
 const findTargets = (line: string): string[] =>
 	[...line].filter((c) => isKanji(c) && !isCompulsory(c));
 
-const convert = (lines: string[]): LineData[] =>
+const convertArrayToLineDatas = (lines: string[]): LineData[] =>
 	lines.map((text, id) => ({
 		id,
 		text,
@@ -61,7 +61,7 @@ const Read = ({ file }: Props) => {
 		const buf = readFileSync(file, "utf-8");
 		setBuffer(buf);
 		const ls = buf.split("\n");
-		const datas = convert(ls);
+		const datas = convertArrayToLineDatas(ls);
 		setLineDatas(datas);
 		// setLines(ls);
 
