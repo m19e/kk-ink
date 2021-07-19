@@ -33,10 +33,10 @@ const findTargets = (line: string): string[] =>
 	[...line].filter((c) => isKanji(c) && !isCompulsory(c));
 
 const convert = (lines: string[]): LineData[] => {
-	const res = lines.map((line, i) => ({
-		id: i,
-		text: line,
-		targets: findTargets(line),
+	const res = lines.map((text, id) => ({
+		id,
+		text,
+		targets: findTargets(text),
 	}));
 
 	return res;
