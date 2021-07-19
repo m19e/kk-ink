@@ -25,6 +25,7 @@ const FormDemoCustom: FC<{
 		.map((d) => {
 			return {
 				title: "" + d.id,
+				description: d.text,
 				fields: d.targets.map((t) => {
 					return {
 						type: "custom",
