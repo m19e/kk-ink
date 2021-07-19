@@ -23,8 +23,6 @@ const isHiraKata = (c: string): boolean =>
 
 const isOK = (c: string): boolean => isHiraKata(c) || isCompulsory(c);
 
-const isAllOK = (l: string): boolean => [...l].every((c) => isOK(c));
-
 type LineData = {
 	id: number;
 	text: string;
