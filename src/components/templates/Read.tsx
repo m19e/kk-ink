@@ -84,7 +84,8 @@ const Read = ({ file }: Props) => {
 			) : (
 				<>
 					<Logo />
-					<Form />
+					<Text>{JSON.stringify(lineDatas, null, 2)}</Text>
+					{/* <Form /> */}
 				</>
 			)}
 		</>
