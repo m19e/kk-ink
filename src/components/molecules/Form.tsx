@@ -21,20 +21,16 @@ const FormDemoCustom: FC<{
 }> = ({ datas }) => {
 	const formData: FormSection[] = datas
 		.filter((d) => d.targets.length)
-		.map((d) => {
-			return {
-				title: "" + d.id,
-				description: d.text,
-				fields: d.targets.map((t) => {
-					return {
-						type: "custom",
-						name: t,
-						description: "Hiragana or Katakana",
-						regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
-					};
-				}),
-			};
-		});
+		.map((d) => ({
+			title: "" + d.id,
+			description: d.text,
+			fields: d.targets.map((t) => ({
+				type: "custom",
+				name: t,
+				description: "Hiragana or Katakana",
+				regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
+			})),
+		}));
 
 	return (
 		<Form
