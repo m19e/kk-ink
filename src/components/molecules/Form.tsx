@@ -6,7 +6,6 @@ import {
 	FormFieldString,
 	FormFieldValueRendererProps,
 	SpecificFormFieldRendererProps,
-	FormField,
 	FormSection,
 } from "../../ink/form";
 import TextInput from "ink-text-input";
