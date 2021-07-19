@@ -31,14 +31,13 @@ type LineData = {
 	targets: string[];
 };
 
-const convert = (lines: string[]): string[] => {
-	const res = lines.map((line) => {
-		let text = "";
+const convert = (lines: string[]): LineData[] => {
+	const res = lines.map((line, i) => {
+		let targets = [];
 		for (const c of [...line]) {
-			if (isKanji(c) && !isCompulsory(c)) text += "k";
-			text += c;
+			if (isKanji(c) && !isCompulsory(c)) targets.push(c);
 		}
-		return text;
+		return { id: i, text: line, targets };
 	});
 
 	return res;
