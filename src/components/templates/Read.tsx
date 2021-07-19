@@ -32,15 +32,12 @@ type LineData = {
 const findTargets = (line: string): string[] =>
 	[...line].filter((c) => isKanji(c) && !isCompulsory(c));
 
-const convert = (lines: string[]): LineData[] => {
-	const res = lines.map((text, id) => ({
+const convert = (lines: string[]): LineData[] =>
+	lines.map((text, id) => ({
 		id,
 		text,
 		targets: findTargets(text),
 	}));
-
-	return res;
-};
 
 const Read = ({ file }: Props) => {
 	const [buffer, setBuffer] = useState("");
