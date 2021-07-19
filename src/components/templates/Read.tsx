@@ -31,6 +31,9 @@ type LineData = {
 	targets: string[];
 };
 
+const findTargets = (line: string): string[] =>
+	[...line].filter((c) => isKanji(c) && !isCompulsory(c));
+
 const convert = (lines: string[]): LineData[] => {
 	const res = lines.map((line, i) => {
 		let targets = [];
