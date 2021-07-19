@@ -44,7 +44,7 @@ const convert = (lines: string[]): LineData[] => {
 };
 
 const Read = ({ file }: Props) => {
-	const [data, setData] = useState("");
+	const [buffer, setBuffer] = useState("");
 	const [loading, setLoading] = useState(true);
 	const [lines, setLines] = useState<string[]>([]);
 
@@ -62,7 +62,7 @@ const Read = ({ file }: Props) => {
 
 	useEffect(() => {
 		const buf = readFileSync(file, "utf-8");
-		setData(buf);
+		setBuffer(buf);
 		const ls = buf.split("\n");
 		// const ced = convert(ls);
 		setLines(ls);
