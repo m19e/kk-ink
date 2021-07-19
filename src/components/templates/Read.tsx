@@ -58,9 +58,9 @@ const Read = ({ file }: Props) => {
 	useEffect(() => {
 		const buf = readFileSync(file, "utf-8");
 		setData(buf);
-		// const ls = buf.split("\n");
+		const ls = buf.split("\n");
 		// const ced = convert(ls);
-		// setLines(ls);
+		setLines(ls);
 
 		setLoading(false);
 	}, []);
