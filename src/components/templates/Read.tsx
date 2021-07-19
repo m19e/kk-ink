@@ -87,7 +87,7 @@ const Read = ({ file }: Props) => {
 			) : (
 				<>
 					<Logo />
-					<Form datas={lineDatas} />
+					<Form datas={lineDatas} update={updateLineDatas} />
 				</>
 			)}
 		</>
