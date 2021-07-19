@@ -18,7 +18,8 @@ const FormDemoCustom: FC<{
 		text: string;
 		targets: string[];
 	}[];
-}> = ({ datas }) => {
+	update: (obj: object) => void;
+}> = ({ datas, update }) => {
 	const formData: FormSection[] = datas
 		.filter((d) => d.targets.length)
 		.map((d) => ({
@@ -34,7 +35,7 @@ const FormDemoCustom: FC<{
 
 	return (
 		<Form
-			onSubmit={(value) => console.log(`Submitted: `, value)}
+			onSubmit={(value) => update(value)}
 			customManagers={[
 				{
 					type: "custom",
