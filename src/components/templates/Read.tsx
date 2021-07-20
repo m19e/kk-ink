@@ -41,7 +41,6 @@ const convertArrayToLineDatas = (lines: string[]): LineData[] =>
 
 const Read = ({ file }: Props) => {
 	const [buffer, setBuffer] = useState("");
-	const [lines, setLines] = useState<string[]>([]);
 	const [lineDatas, setLineDatas] = useState<LineData[]>([]);
 	const [loading, setLoading] = useState(true);
 
@@ -63,7 +62,6 @@ const Read = ({ file }: Props) => {
 		const ls = buf.split("\n");
 		const datas = convertArrayToLineDatas(ls);
 		setLineDatas(datas);
-		// setLines(ls);
 
 		setLoading(false);
 	}, []);
