@@ -30,6 +30,7 @@ const FormDemoCustom: FC<{
 				name: t,
 				description: "Hiragana or Katakana",
 				regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
+				required: true,
 			})),
 		}));
 
