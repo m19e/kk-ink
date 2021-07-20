@@ -57,7 +57,7 @@ export const FormFieldRenderer: React.FC<FormFieldRendererProps<any>> = props =>
           <Text underline={isFocused} color={isFocused ? 'blue' : undefined}>
             {props.field.label ?? props.field.name}
           </Text>
-          {props.field.required && <Text color="red">*</Text>}
+          {/* {props.field.required && <Text color="red">*</Text>} */}
           <Text>: </Text>
           <Text dimColor>
             <RenderValue value={props.value as any} field={props.field} />
