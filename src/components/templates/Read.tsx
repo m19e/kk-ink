@@ -67,7 +67,9 @@ const Read = ({ file }: Props) => {
 
 	const updateLineDatas = (submit: { [k: string]: string }) => {
 		let buf = "" + buffer;
-		Object.entries(submit).forEach(([k, v]) => (buf = buf.split(k).join(v)));
+		Object.entries(submit).forEach(([k, v]) => {
+			if (buf.includes(k)) buf = buf.split(k).join(v);
+		});
 		setLineDatas(() => convertArrayToLineDatas(buf.split("\n")));
 		setBuffer(buf);
 	};
