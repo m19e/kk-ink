@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Box } from "ink";
+import { Box, Text } from "ink";
 import {
 	Form,
 	AbstractFormField,
@@ -32,6 +32,8 @@ const FormDemoCustom: FC<{
 				regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
 			})),
 		}));
+
+	if (!formData.length) return <Text>Complete.</Text>;
 
 	return (
 		<Form
