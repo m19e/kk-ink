@@ -37,7 +37,7 @@ const FormDemoCustom: FC<{
 			),
 		}));
 
-	if (!formData.length) return <Text>Complete.</Text>;
+	if (!formData.length) return null;
 
 	return (
 		<Form
