@@ -94,7 +94,7 @@ export const FormFieldRenderer: React.FC<FormFieldRendererProps<any>> = props =>
       <Box paddingX={3} paddingY={1} flexDirection="column">
         <Box>
           <Text>{props.field.label ?? props.field.name}</Text>
-          {props.field.required && <Text color="red">*</Text>}
+          {/* {props.field.required && <Text color="red">*</Text>} */}
           <Text>: </Text>
         </Box>
         <Box>{component}</Box>
