@@ -43,6 +43,7 @@ const Read = ({ file }: Props) => {
 	const [buffer, setBuffer] = useState("");
 	const [lineDatas, setLineDatas] = useState<LineData[]>([]);
 	const [loading, setLoading] = useState(true);
+	const [submitted, setSubmitted] = useState(false);
 
 	if (
 		typeof file !== "string" ||
@@ -72,6 +73,7 @@ const Read = ({ file }: Props) => {
 		});
 		setLineDatas(() => convertArrayToLineDatas(buf.split("\n")));
 		setBuffer(buf);
+		setSubmitted(true);
 	};
 
 	return (
@@ -87,7 +89,11 @@ const Read = ({ file }: Props) => {
 			) : (
 				<>
 					<Text>✔「{file}」を読み込みました！</Text>
-					<Form datas={lineDatas} update={updateLineDatas} />
+					{submitted ? (
+						<Text>{buffer}</Text>
+					) : (
+						<Form datas={lineDatas} update={updateLineDatas} />
+					)}
 				</>
 			)}
 		</>
