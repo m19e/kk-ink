@@ -25,13 +25,16 @@ const FormDemoCustom: FC<{
 		.map((d) => ({
 			title: "" + d.id,
 			description: d.text,
-			fields: d.targets.map((t) => ({
-				type: "custom",
-				name: t,
-				description: "Hiragana or Katakana",
-				regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
-				required: true,
-			})),
+			fields: d.targets.map(
+				(t) =>
+					({
+						type: "custom",
+						name: t,
+						description: "Hiragana or Katakana",
+						regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
+						required: true,
+					} as CustomField)
+			),
 		}));
 
 	if (!formData.length) return <Text>Complete.</Text>;
