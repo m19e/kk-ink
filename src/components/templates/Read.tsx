@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Text, Box } from "ink";
 import Spinner from "ink-spinner";
-import { extname } from "path";
+import { extname, parse } from "path";
 import { existsSync, readFileSync } from "fs";
 import { COMPULSORY } from "../../consts";
 import Form from "../molecules/Form";
@@ -90,8 +90,13 @@ const Read = ({ file }: Props) => {
 				<>
 					<Text>✔「{file}」を読み込みました！</Text>
 					{submitted ? (
-						<Box paddingX={2} paddingY={1}>
-							<Text>{buffer}</Text>
+						<Box paddingBottom={1} flexDirection="column">
+							<Box paddingX={2} paddingY={1}>
+								<Text>{buffer}</Text>
+							</Box>
+							<Text>
+								「{`${parse(file).name}_kk${extname(file)}`}」に書き出しました！
+							</Text>
 						</Box>
 					) : (
 						<Form datas={lineDatas} update={updateLineDatas} />
