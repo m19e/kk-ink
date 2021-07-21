@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Text, Newline } from "ink";
+import { Text, Box } from "ink";
 import Spinner from "ink-spinner";
 import { extname } from "path";
 import { existsSync, readFileSync } from "fs";
@@ -90,7 +90,9 @@ const Read = ({ file }: Props) => {
 				<>
 					<Text>✔「{file}」を読み込みました！</Text>
 					{submitted ? (
-						<Text>{buffer}</Text>
+						<Box paddingX={2} paddingY={1}>
+							<Text>{buffer}</Text>
+						</Box>
 					) : (
 						<Form datas={lineDatas} update={updateLineDatas} />
 					)}
