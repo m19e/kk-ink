@@ -71,7 +71,7 @@ const FormDemoCustom: FC<{
 				},
 			]}
 			form={{
-				title: "Custom Form Field Manager",
+				title: "Teach me Kanji reading!",
 				sections: formData,
 			}}
 		/>
