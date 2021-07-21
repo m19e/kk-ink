@@ -76,16 +76,17 @@ const Read = ({ file }: Props) => {
 
 	return (
 		<>
+			<Logo />
 			{loading ? (
 				<Text>
 					<Text color="green">
 						<Spinner type="dots" />
 					</Text>
-					<Text> Loading</Text>
+					<Text> 「{file}」を読み込んでますっ</Text>
 				</Text>
 			) : (
 				<>
-					<Logo />
+					<Text>✔ 「{file}」を読み込みました！</Text>
 					<Form datas={lineDatas} update={updateLineDatas} />
 				</>
 			)}
