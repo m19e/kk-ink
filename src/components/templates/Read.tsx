@@ -2,6 +2,7 @@ import React, { FC, useState, useEffect } from "react";
 import { Text, Box } from "ink";
 import { FormSection } from "../../ink/form";
 import Spinner from "ink-spinner";
+import Divider from "ink-divider";
 import { parse, join } from "path";
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { COMPULSORY } from "../../consts";
@@ -106,12 +107,14 @@ const Read: FC<{ file: string }> = ({ file }) => {
 				</Text>
 			) : (
 				<>
-					<Text>✔「{file}」を読み込みました！</Text>
+					<Text> ✔「{file}」を読み込みました！</Text>
+					<Divider width={54} />
 					{submitted ? (
 						<Box paddingBottom={1} flexDirection="column">
 							<Box paddingX={2} paddingY={1}>
 								<Text>{buffer}</Text>
 							</Box>
+							<Divider width={54} />
 							<Text>「{outputFile}」に書き出しました！</Text>
 						</Box>
 					) : (
