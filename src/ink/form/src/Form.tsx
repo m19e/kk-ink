@@ -66,7 +66,7 @@ export const Form: React.FC<FormProps> = props => {
           <DescriptionRenderer description={props.form.sections[currentTab].description} />
         </Box>
       )}
-      <Box flexDirection="column">
+      <Box flexDirection="column" alignItems="center">
         {currentTab > props.form.sections.length - 1
           ? null
           : props.form.sections[currentTab].fields.map(field => (
