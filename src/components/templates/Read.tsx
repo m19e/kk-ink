@@ -31,8 +31,14 @@ const convertArrayToLineDatas = (lines: string[]): LineData[] =>
 		targets: findTargets(text),
 	}));
 
-const convertLineDatasToFormSections = (lds: LineData[]) =>
-	lds
+const convertBufferToFormSections = (buf: string): FormSection[] =>
+	buf
+		.split("\n")
+		.map((text, id) => ({
+			id,
+			text,
+			targets: findTargets(text),
+		}))
 		.filter((d) => d.targets.length)
 		.map((d) => ({
 			title: "" + d.id,
