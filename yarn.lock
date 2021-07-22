@@ -993,6 +993,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/ink-divider@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/ink-divider/-/ink-divider-2.0.2.tgz#ad1939a07d9d09ef2dc25f9531e2c6266461fd69"
+  integrity sha512-gY4kKSh1dNrZ++GQXW2KfMVexQfUsvE/LdUy7le5FSSeSemwk+u+ztHd+SMzfEjEHcCqpmRIQqKSrFOXLYCLHA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/ink-gradient@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/ink-gradient/-/ink-gradient-2.0.1.tgz#950d0c0624b6ff1c85b91980a51ead73ddeb1795"
@@ -3239,6 +3246,14 @@ ink-big-text@^1.2.0:
   dependencies:
     cfonts "^2.8.6"
     prop-types "^15.7.2"
+
+ink-divider@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ink-divider/-/ink-divider-3.0.0.tgz#00d11123a790d1d66ec599bf4636e1acb7a674e2"
+  integrity sha512-Mqb9WArtEZCtXw622aHhJqPK157QNc+8ssl9/RvAZlS6nZRCKyW4mYOYCudQh6dSuFGt9eG5yaqT1mJaGmwu+w==
+  dependencies:
+    prop-types "^15.7.2"
+    string-width "^4.0.0"
 
 ink-form@^1.0.1:
   version "1.0.1"

@@ -18,6 +18,7 @@
 	"dependencies": {
 		"ink": "^3.0.8",
 		"ink-big-text": "^1.2.0",
+		"ink-divider": "^3.0.0",
 		"ink-form": "^1.0.1",
 		"ink-gradient": "^2.0.0",
 		"ink-spinner": "^4.0.2",
@@ -28,6 +29,7 @@
 	},
 	"devDependencies": {
 		"@types/ink-big-text": "^1.2.1",
+		"@types/ink-divider": "^2.0.2",
 		"@types/ink-gradient": "^2.0.1",
 		"@types/ink-spinner": "^3.0.0",
 		"@types/ink-text-input": "^2.0.2",
