@@ -114,7 +114,7 @@ const Read: FC<{ file: string }> = ({ file }) => {
 							</Text>
 						</Box>
 					) : (
-						<Form datas={lineDatas} update={updateLineDatas} />
+						<Form formData={formSections} update={updateLineDatas} />
 					)}
 				</>
 			)}
