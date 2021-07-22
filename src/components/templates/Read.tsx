@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from "react";
 import { Text, Box } from "ink";
 import { FormSection } from "../../ink/form";
 import Spinner from "ink-spinner";
-import { extname, parse } from "path";
+import { extname, parse, join } from "path";
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { COMPULSORY } from "../../consts";
 import { LineData, CustomField } from "../../types";
@@ -61,7 +61,8 @@ const Read: FC<{ file: string }> = ({ file }) => {
 	const [loading, setLoading] = useState(true);
 	const [submitted, setSubmitted] = useState(false);
 
-	const outputFile = `${parse(file).name}_kk${extname(file)}`;
+	const { dir, ext, name } = parse(file);
+	const outputFile = join(dir, `${name}_kk${ext}`);
 
 	if (
 		typeof file !== "string" ||
