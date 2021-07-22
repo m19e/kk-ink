@@ -101,7 +101,7 @@ const Read: FC<{ file: string }> = ({ file }) => {
 					<Text> ✔「{file}」を読み込みました！</Text>
 					{submitted ? (
 						<Box paddingBottom={1} flexDirection="column">
-							<Box paddingX={2} paddingY={1}>
+							<Box paddingX={3} paddingY={1}>
 								<Text>{buffer}</Text>
 							</Box>
 							<Text>「{outputFile}」に書き出しました！</Text>
