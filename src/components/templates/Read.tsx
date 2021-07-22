@@ -9,10 +9,6 @@ import { LineData, CustomField } from "../../types";
 import Form from "../molecules/Form";
 import Logo from "../atoms/Logo";
 
-type Props = {
-	file: string;
-};
-
 const isKanji = (c: string): boolean =>
 	/[\u2E80-\u2FDF々〇〻\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF\u20000-\u2FFFF]/.test(
 		c
