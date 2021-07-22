@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { Text, Box } from "ink";
 import { AbstractFormField, FormSection } from "../../ink/form";
 import Spinner from "ink-spinner";
@@ -53,7 +53,7 @@ const convertLineDatasToFormSections = (lds: LineData[]) =>
 			),
 		}));
 
-const Read = ({ file }: Props) => {
+const Read: FC<{ file: string }> = ({ file }) => {
 	const [buffer, setBuffer] = useState("");
 	const [lineDatas, setLineDatas] = useState<LineData[]>([]);
 	const [loading, setLoading] = useState(true);
