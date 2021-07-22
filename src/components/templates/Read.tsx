@@ -84,7 +84,8 @@ const Read: FC<{ file: string }> = ({ file }) => {
 	const updateLineDatas = (submit: object) => {
 		let buf = "" + buffer;
 		Object.entries(submit).forEach(([k, v]) => {
-			if (buf.includes(k)) buf = buf.split(k).join(v);
+			// if (buf.includes(k))
+			buf = buf.split(k).join(v);
 		});
 		setFormSections(() => convertBufferToFormSections(buf));
 		setBuffer(buf);
