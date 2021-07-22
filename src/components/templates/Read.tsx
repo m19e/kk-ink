@@ -6,7 +6,7 @@ import Divider from "ink-divider";
 import { parse, join } from "path";
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { COMPULSORY } from "../../consts";
-import { LineData, CustomField } from "../../types";
+import { CustomField } from "../../types";
 import Form from "../molecules/Form";
 import Logo from "../atoms/Logo";
 
