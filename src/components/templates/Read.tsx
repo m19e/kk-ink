@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from "react";
 import { Text, Box } from "ink";
 import { FormSection } from "../../ink/form";
 import Spinner from "ink-spinner";
-import { extname, parse, join } from "path";
+import { parse, join } from "path";
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { COMPULSORY } from "../../consts";
 import { LineData, CustomField } from "../../types";
