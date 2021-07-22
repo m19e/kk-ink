@@ -5,6 +5,7 @@ import Spinner from "ink-spinner";
 import { extname, parse } from "path";
 import { existsSync, readFileSync } from "fs";
 import { COMPULSORY } from "../../consts";
+import { LineData, CustomField } from "../../types";
 import Form from "../molecules/Form";
 import Logo from "../atoms/Logo";
 
@@ -23,14 +24,6 @@ const isHiraKata = (c: string): boolean =>
 	/[\u3041-\u3096\u30A1-\u30FA]/.test(c);
 
 const isOK = (c: string): boolean => isHiraKata(c) || isCompulsory(c);
-
-type LineData = {
-	id: number;
-	text: string;
-	targets: string[];
-};
-
-type CustomField = AbstractFormField<"custom", string> & { regex: RegExp };
 
 const findTargets = (line: string): string[] =>
 	[...line].filter((c) => isKanji(c) && !isCompulsory(c));
