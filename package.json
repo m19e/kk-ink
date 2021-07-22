@@ -16,7 +16,7 @@
 		"build"
 	],
 	"dependencies": {
-		"ink": "^3.0.8",
+		"ink": "^3.0.9",
 		"ink-big-text": "^1.2.0",
 		"ink-divider": "^3.0.0",
 		"ink-form": "^1.0.1",
