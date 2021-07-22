@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import { Text, Box } from "ink";
-import { AbstractFormField, FormSection } from "../../ink/form";
+import { FormSection } from "../../ink/form";
 import Spinner from "ink-spinner";
 import { extname, parse } from "path";
 import { existsSync, readFileSync } from "fs";
