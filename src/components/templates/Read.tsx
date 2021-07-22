@@ -99,13 +99,11 @@ const Read: FC<{ file: string }> = ({ file }) => {
 			) : (
 				<>
 					<Text> ✔「{file}」を読み込みました！</Text>
-					<Divider width={54} />
 					{submitted ? (
 						<Box paddingBottom={1} flexDirection="column">
 							<Box paddingX={2} paddingY={1}>
 								<Text>{buffer}</Text>
 							</Box>
-							<Divider width={54} />
 							<Text>「{outputFile}」に書き出しました！</Text>
 						</Box>
 					) : (
