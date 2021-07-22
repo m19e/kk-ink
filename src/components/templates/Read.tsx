@@ -52,6 +52,7 @@ const convertLineDatasToFormSections = (lds: LineData[]) =>
 const Read: FC<{ file: string }> = ({ file }) => {
 	const [buffer, setBuffer] = useState("");
 	const [lineDatas, setLineDatas] = useState<LineData[]>([]);
+	const [formSections, setFormSections] = useState<FormSection[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [submitted, setSubmitted] = useState(false);
 
@@ -70,8 +71,9 @@ const Read: FC<{ file: string }> = ({ file }) => {
 	useEffect(() => {
 		const buf = readFileSync(file, "utf-8");
 		setBuffer(buf);
-		const datas = convertArrayToLineDatas(buf.split("\n"));
-		setLineDatas(datas);
+		setFormSections(() =>
+			convertLineDatasToFormSections(convertArrayToLineDatas(buf.split("\n")))
+		);
 
 		setLoading(false);
 	}, []);
@@ -81,9 +83,12 @@ const Read: FC<{ file: string }> = ({ file }) => {
 		Object.entries(submit).forEach(([k, v]) => {
 			if (buf.includes(k)) buf = buf.split(k).join(v);
 		});
-		setLineDatas(() => convertArrayToLineDatas(buf.split("\n")));
+		setFormSections(() =>
+			convertLineDatasToFormSections(convertArrayToLineDatas(buf.split("\n")))
+		);
 		setBuffer(buf);
 		setSubmitted(true);
+		// writeResultToFile(filename)
 	};
 
 	return (
