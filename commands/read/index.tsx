@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { useApp, useInput, Box, Text } from "ink";
 import ReadCmd from "../../src/components/templates/Read";
 
 type Props = {
