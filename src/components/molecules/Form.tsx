@@ -2,14 +2,12 @@ import React, { FC } from "react";
 import { Box, Text } from "ink";
 import {
 	Form,
-	AbstractFormField,
 	FormFieldString,
 	FormFieldValueRendererProps,
 	SpecificFormFieldRendererProps,
 	FormSection,
 } from "../../ink/form";
 import TextInput from "ink-text-input";
-import { LineData } from "../../types";
 
 const FormDemoCustom: FC<{
 	formData: FormSection[];
