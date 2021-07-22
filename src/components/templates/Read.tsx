@@ -83,7 +83,7 @@ const Read: FC<{ file: string }> = ({ file }) => {
 		setLoading(false);
 	}, []);
 
-	const updateLineDatas = (submit: { [k: string]: string }) => {
+	const updateLineDatas = (submit: object) => {
 		let buf = "" + buffer;
 		Object.entries(submit).forEach(([k, v]) => {
 			if (buf.includes(k)) buf = buf.split(k).join(v);
