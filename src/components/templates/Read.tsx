@@ -59,12 +59,12 @@ const Read: FC<{ file: string }> = ({ file }) => {
 		typeof file !== "string" ||
 		(extname(file) !== ".txt" && extname(file) !== ".md")
 	) {
-		return <Text color="red">ファイルを指定してくださいっ</Text>;
+		return <Text color="redBright">ファイルを指定してくださいっ</Text>;
 	}
 
 	const exist = existsSync(file);
 	if (!exist) {
-		return <Text>見つかりませんでした……</Text>;
+		return <Text color="redBright">見つかりませんでした……</Text>;
 	}
 
 	useEffect(() => {
