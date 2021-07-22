@@ -20,17 +20,8 @@ const isCompulsory = (c: string): boolean => COMPULSORY.includes(c);
 const isHiraKata = (c: string): boolean =>
 	/[\u3041-\u3096\u30A1-\u30FA]/.test(c);
 
-const isOK = (c: string): boolean => isHiraKata(c) || isCompulsory(c);
-
 const findTargets = (line: string): string[] =>
 	[...line].filter((c) => isKanji(c) && !isCompulsory(c));
-
-const convertArrayToLineDatas = (lines: string[]): LineData[] =>
-	lines.map((text, id) => ({
-		id,
-		text,
-		targets: findTargets(text),
-	}));
 
 const convertBufferToFormSections = (buf: string): FormSection[] =>
 	buf
