@@ -12,26 +12,9 @@ import TextInput from "ink-text-input";
 import { LineData } from "../../types";
 
 const FormDemoCustom: FC<{
-	datas: LineData[];
+	formData: FormSection[];
 	update: (obj: object) => void;
-}> = ({ datas, update }) => {
-	const formData: FormSection[] = datas
-		.filter((d) => d.targets.length)
-		.map((d) => ({
-			title: "" + d.id,
-			description: d.text,
-			fields: d.targets.map(
-				(t) =>
-					({
-						type: "custom",
-						name: t,
-						description: "Hiragana or Katakana",
-						regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
-						required: true,
-					} as CustomField)
-			),
-		}));
-
+}> = ({ formData, update }) => {
 	if (!formData.length) return null;
 
 	return (
