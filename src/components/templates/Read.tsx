@@ -3,7 +3,7 @@ import { Text, Box } from "ink";
 import { FormSection } from "../../ink/form";
 import Spinner from "ink-spinner";
 import { extname, parse } from "path";
-import { existsSync, readFileSync } from "fs";
+import { existsSync, readFileSync, writeFileSync } from "fs";
 import { COMPULSORY } from "../../consts";
 import { LineData, CustomField } from "../../types";
 import Form from "../molecules/Form";
@@ -91,7 +91,8 @@ const Read: FC<{ file: string }> = ({ file }) => {
 		setFormSections(() => convertBufferToFormSections(buf));
 		setBuffer(buf);
 		setSubmitted(true);
-		// writeResultToFile(filename)
+
+		writeFileSync(outputFile, buf);
 	};
 
 	return (
