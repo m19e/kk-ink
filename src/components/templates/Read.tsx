@@ -61,6 +61,8 @@ const Read: FC<{ file: string }> = ({ file }) => {
 	const [loading, setLoading] = useState(true);
 	const [submitted, setSubmitted] = useState(false);
 
+	const outputFile = `${parse(file).name}_kk${extname(file)}`;
+
 	if (
 		typeof file !== "string" ||
 		(extname(file) !== ".txt" && extname(file) !== ".md")
@@ -110,9 +112,7 @@ const Read: FC<{ file: string }> = ({ file }) => {
 							<Box paddingX={2} paddingY={1}>
 								<Text>{buffer}</Text>
 							</Box>
-							<Text>
-								「{`${parse(file).name}_kk${extname(file)}`}」に書き出しました！
-							</Text>
+							<Text>「{outputFile}」に書き出しました！</Text>
 						</Box>
 					) : (
 						<Form formData={formSections} update={updateLineDatas} />
