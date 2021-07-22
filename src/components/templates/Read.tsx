@@ -73,7 +73,7 @@ const Read: FC<{ file: string }> = ({ file }) => {
 		setLoading(false);
 	}, []);
 
-	const updateLineDatas = (submit: object) => {
+	const update = (submit: object) => {
 		let buf = "" + buffer;
 		Object.entries(submit).forEach(([k, v]) => {
 			// if (buf.includes(k))
@@ -109,7 +109,7 @@ const Read: FC<{ file: string }> = ({ file }) => {
 							<Text>「{outputFile}」に書き出しました！</Text>
 						</Box>
 					) : (
-						<Form formData={formSections} update={updateLineDatas} />
+						<Form formData={formSections} update={update} />
 					)}
 				</>
 			)}
