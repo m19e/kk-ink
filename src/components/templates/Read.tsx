@@ -64,10 +64,7 @@ const Read: FC<{ file: string }> = ({ file }) => {
 	const { dir, ext, name } = parse(file);
 	const outputFile = join(dir, `${name}_kk${ext}`);
 
-	if (
-		typeof file !== "string" ||
-		(extname(file) !== ".txt" && extname(file) !== ".md")
-	) {
+	if (typeof file !== "string" || (ext !== ".txt" && ext !== ".md")) {
 		return <Text color="redBright">ファイルを指定してくださいっ</Text>;
 	}
 
