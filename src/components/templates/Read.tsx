@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Text, Box } from "ink";
+import { AbstractFormField, FormSection } from "../../ink/form";
 import Spinner from "ink-spinner";
 import { extname, parse } from "path";
 import { existsSync, readFileSync } from "fs";
@@ -29,6 +30,8 @@ type LineData = {
 	targets: string[];
 };
 
+type CustomField = AbstractFormField<"custom", string> & { regex: RegExp };
+
 const findTargets = (line: string): string[] =>
 	[...line].filter((c) => isKanji(c) && !isCompulsory(c));
 
@@ -38,6 +41,24 @@ const convertArrayToLineDatas = (lines: string[]): LineData[] =>
 		text,
 		targets: findTargets(text),
 	}));
+
+const convertLineDatasToFormSections = (lds: LineData[]) =>
+	lds
+		.filter((d) => d.targets.length)
+		.map((d) => ({
+			title: "" + d.id,
+			description: d.text,
+			fields: d.targets.map(
+				(t) =>
+					({
+						type: "custom",
+						name: t,
+						description: "Hiragana or Katakana",
+						regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
+						required: true,
+					} as CustomField)
+			),
+		}));
 
 const Read = ({ file }: Props) => {
 	const [buffer, setBuffer] = useState("");
