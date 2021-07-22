@@ -51,7 +51,6 @@ const convertLineDatasToFormSections = (lds: LineData[]) =>
 
 const Read: FC<{ file: string }> = ({ file }) => {
 	const [buffer, setBuffer] = useState("");
-	const [lineDatas, setLineDatas] = useState<LineData[]>([]);
 	const [formSections, setFormSections] = useState<FormSection[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [submitted, setSubmitted] = useState(false);
