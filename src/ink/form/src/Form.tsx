@@ -62,7 +62,7 @@ export const Form: React.FC<FormProps> = props => {
     <Box width="100%" height="100%" flexDirection="column">
       <FormHeader {...props} currentTab={currentTab} onChangeTab={setCurrentTab} editingField={editingField} />
       {!editingField && props.form.sections[currentTab].description && (
-        <Box marginX={4}>
+        <Box marginX={4} marginY={1}>
           <DescriptionRenderer description={props.form.sections[currentTab].description} />
         </Box>
       )}
