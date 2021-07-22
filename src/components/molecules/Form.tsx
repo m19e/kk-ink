@@ -9,15 +9,10 @@ import {
 	FormSection,
 } from "../../ink/form";
 import TextInput from "ink-text-input";
-
-type CustomField = AbstractFormField<"custom", string> & { regex: RegExp };
+import { LineData } from "../../types";
 
 const FormDemoCustom: FC<{
-	datas: {
-		id: number;
-		text: string;
-		targets: string[];
-	}[];
+	datas: LineData[];
 	update: (obj: object) => void;
 }> = ({ datas, update }) => {
 	const formData: FormSection[] = datas
