@@ -23,12 +23,7 @@ export const SubmitButton: React.FC<{
             : 'Use the arrow keys to navigate to the submit button.'}
         </Text>
       </Box>
-      <Box
-        borderStyle={'round'}
-        borderColor={!props.canSubmit ? 'gray' : isFocused ? 'blue' : 'white'}
-        paddingX={2}
-        paddingY={1}
-      >
+      <Box borderStyle={'round'} borderColor={!props.canSubmit ? 'gray' : isFocused ? 'blue' : 'white'} paddingX={2}>
         <Text color={!props.canSubmit ? 'gray' : isFocused ? 'blue' : 'white'} bold={true} underline={isFocused}>
           {props.canSubmit ? 'Submit form' : 'Cannot submit form yet'}
         </Text>
