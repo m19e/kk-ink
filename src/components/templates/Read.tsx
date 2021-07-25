@@ -50,7 +50,6 @@ const Read: FC<{ file: string }> = ({ file }) => {
 	const [buffer, setBuffer] = useState("");
 	const [formSections, setFormSections] = useState<FormSection[]>([]);
 	const [loading, setLoading] = useState(true);
-	const [submitted, setSubmitted] = useState(false);
 	const [status, setStatus] = useState<"load" | "edit" | "confirm" | "submit">(
 		"load"
 	);
