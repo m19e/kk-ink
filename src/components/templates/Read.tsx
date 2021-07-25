@@ -72,7 +72,12 @@ const Read: FC<{ file: string }> = ({ file }) => {
 		setBuffer(buf);
 		setFormSections(() => convertBufferToFormSections(buf));
 
-		setLoading(false);
+		setTimeout(() => {
+			setLoading(false);
+			setTimeout(() => {
+				setStatus("edit");
+			}, 1500);
+		}, 2000);
 	}, []);
 
 	const update = (submit: object) => {
@@ -87,37 +92,38 @@ const Read: FC<{ file: string }> = ({ file }) => {
 			setBuffer(buf);
 		} else {
 			writeFileSync(outputFile, buf);
-			setSubmitted(true);
+			setStatus("submit");
 		}
 	};
 
-	if (submitted)
-		return (
-			<Box flexDirection="column">
-				<Box paddingBottom={1}>
+	return (
+		<>
+			{status === "load" && (
+				<>
+					<Logo />
+					<Text>
+						{loading ? (
+							<>
+								<Text color="green">
+									<Spinner type="dots" />
+								</Text>
+								<Text>「{file}」を読み込んでますっ</Text>
+							</>
+						) : (
+							<Text> ✔「{file}」を読み込みました！</Text>
+						)}
+					</Text>
+				</>
+			)}
+			{status === "edit" && <Form formData={formSections} update={update} />}
+			{status === "confirm" && null}
+			{status === "submit" && (
+				<Box flexDirection="column">
 					<Box paddingX={3} paddingY={1} borderStyle="bold">
 						<Text>{buffer}</Text>
 					</Box>
+					<Text>「{outputFile}」に書き出しました！</Text>
 				</Box>
-				<Text>「{outputFile}」に書き出しました！</Text>
-			</Box>
-		);
-
-	return (
-		<>
-			<Logo />
-			{loading ? (
-				<Text>
-					<Text color="green">
-						<Spinner type="dots" />
-					</Text>
-					<Text>「{file}」を読み込んでますっ</Text>
-				</Text>
-			) : (
-				<>
-					<Text> ✔「{file}」を読み込みました！</Text>
-					<Form formData={formSections} update={update} />
-				</>
 			)}
 		</>
 	);
