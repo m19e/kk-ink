@@ -52,7 +52,14 @@ export const FormFieldRenderer: React.FC<FormFieldRendererProps<any>> = props =>
   if (!isEditing) {
     const RenderValue = manager?.renderValue ?? (() => <>{props.value}</>);
     return (
-      <Box width="50%" marginX={1} paddingX={1} borderStyle="round" borderColor={isFocused ? 'blue' : undefined}>
+      <Box
+        minWidth={36}
+        width="50%"
+        marginX={1}
+        paddingX={1}
+        borderStyle="round"
+        borderColor={isFocused ? 'blue' : undefined}
+      >
         <Box flexGrow={1}>
           <Text underline={isFocused} color={isFocused ? 'blue' : undefined}>
             {props.field.label ?? props.field.name}
