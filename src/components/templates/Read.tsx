@@ -51,6 +51,9 @@ const Read: FC<{ file: string }> = ({ file }) => {
 	const [formSections, setFormSections] = useState<FormSection[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [submitted, setSubmitted] = useState(false);
+	const [status, setStatus] = useState<"load" | "edit" | "confirm" | "submit">(
+		"load"
+	);
 
 	const { dir, ext, name } = parse(file);
 	const outputFile = join(dir, `${name}_kk${ext}`);
