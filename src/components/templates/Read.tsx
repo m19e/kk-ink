@@ -88,6 +88,8 @@ const Read: FC<{ file: string }> = ({ file }) => {
 		if (sections.length) {
 			setFormSections(sections);
 			setBuffer(buf);
+
+			// setStatus("confirm")
 		} else {
 			writeFileSync(outputFile, buf);
 			setStatus("submit");
