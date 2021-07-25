@@ -75,14 +75,17 @@ const Read: FC<{ file: string }> = ({ file }) => {
 	const update = (submit: object) => {
 		let buf = "" + buffer;
 		Object.entries(submit).forEach(([k, v]) => {
-			// if (buf.includes(k))
-			buf = buf.split(k).join(v);
+			if (buf.includes(k)) buf = buf.split(k).join(v);
 		});
-		setFormSections(() => convertBufferToFormSections(buf));
-		setBuffer(buf);
-		setSubmitted(true);
+		const sections = convertBufferToFormSections(buf);
 
-		writeFileSync(outputFile, buf);
+		if (sections.length) {
+			setFormSections(sections);
+			setBuffer(buf);
+		} else {
+			writeFileSync(outputFile, buf);
+			setSubmitted(true);
+		}
 	};
 
 	return (
