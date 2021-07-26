@@ -2,7 +2,21 @@ import React, { FC, useState, useEffect } from "react";
 import { Box, Text, useInput, useFocusManager, useFocus } from "ink";
 
 /// Focus demo command
-const Focus = () => {
+const Demo = () => {
+	const [result, setResult] = useState("");
+	const [submit, setSubmited] = useState(false);
+
+	const handleSubmit = (id: string) => {
+		setResult(id);
+		setSubmited(true);
+	};
+
+	if (submit) return <Text>result is {result}!</Text>;
+
+	return <Focus onSubmit={handleSubmit} />;
+};
+
+const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 	const [focus, setFocus] = useState<undefined | string>(undefined);
 	const { focusNext, focusPrevious } = useFocusManager();
 
@@ -13,6 +27,9 @@ const Focus = () => {
 			focusPrevious();
 		} else if (key.escape) {
 			setFocus(undefined);
+		} else if (key.return) {
+			if (typeof focus === "undefined") return;
+			onSubmit(focus);
 		}
 	});
 
@@ -65,4 +82,4 @@ const Item: FC<{ label: string; onFocus: (id: string) => void }> = ({
 	);
 };
 
-export default Focus;
+export default Demo;
