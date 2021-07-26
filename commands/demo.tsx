@@ -46,12 +46,11 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 				</Text>
 			</Box>
 			<Box>
-				<Item label="First" onFocus={handleFocus} />
-				<Item label="Second" onFocus={handleFocus} />
-				<Item label="Third" onFocus={handleFocus} />
-				<Box padding={2}>
+				<Item label=" はい " onFocus={handleFocus} />
+				<Item label="いいえ" onFocus={handleFocus} />
+				{/* <Box padding={2}>
 					<Text>{focus && focus}</Text>
-				</Box>
+				</Box> */}
 			</Box>
 		</Box>
 	);
