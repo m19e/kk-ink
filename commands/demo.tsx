@@ -9,14 +9,18 @@ const Focus = () => {
 	useInput((_, key) => {
 		if (key.rightArrow) {
 			fm.focusNext();
-			setInput("→");
+			// setInput("→");
 		} else if (key.leftArrow) {
 			fm.focusPrevious();
-			setInput("←");
+			// setInput("←");
 		} else if (key.tab) {
-			setInput((key.shift ? "shift + " : "") + "tab");
+			// setInput((key.shift ? "shift + " : "") + "tab");
 		}
 	});
+
+	const handleFocus = (id: string) => {
+		setInput(id);
+	};
 
 	return (
 		<Box flexDirection="column" padding={1}>
@@ -27,9 +31,9 @@ const Focus = () => {
 				</Text>
 			</Box>
 			<Box>
-				<Item label="First" />
-				<Item label="Second" />
-				<Item label="Third" />
+				<Item label="First" onFocus={handleFocus} />
+				<Item label="Second" onFocus={handleFocus} />
+				<Item label="Third" onFocus={handleFocus} />
 				<Box padding={2}>
 					<Text>{input}</Text>
 				</Box>
