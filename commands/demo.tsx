@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { Box, Text, useInput, useFocusManager, useFocus } from "ink";
 
 /// Focus demo command
@@ -38,8 +38,17 @@ const Focus = () => {
 	);
 };
 
-const Item: FC<{ label: string }> = ({ label }) => {
+const Item: FC<{ label: string; onFocus: (id: string) => void }> = ({
+	label,
+	onFocus,
+}) => {
 	const { isFocused } = useFocus();
+
+	useEffect(() => {
+		if (isFocused) {
+			onFocus(label);
+		}
+	}, [isFocused]);
 
 	return (
 		<Box
