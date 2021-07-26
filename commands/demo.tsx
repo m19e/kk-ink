@@ -70,7 +70,7 @@ const Item: FC<{ label: string; onFocus: (id: string) => void }> = ({
 
 	return (
 		<Box
-			paddingX={3}
+			paddingX={4}
 			paddingY={1}
 			justifyContent="center"
 			borderStyle="round"
