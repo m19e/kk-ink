@@ -4,13 +4,13 @@ import { Box, Text, useInput, useFocusManager, useFocus } from "ink";
 /// Focus demo command
 const Focus = () => {
 	const [focus, setFocus] = useState<undefined | string>(undefined);
-	const fm = useFocusManager();
+	const { focusNext, focusPrevious } = useFocusManager();
 
 	useInput((_, key) => {
 		if (key.rightArrow) {
-			fm.focusNext();
+			focusNext();
 		} else if (key.leftArrow) {
-			fm.focusPrevious();
+			focusPrevious();
 		} else if (key.escape) {
 			setFocus(undefined);
 		}
