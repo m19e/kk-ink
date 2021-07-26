@@ -9,12 +9,8 @@ const Focus = () => {
 	useInput((_, key) => {
 		if (key.rightArrow) {
 			fm.focusNext();
-			// setInput("→");
 		} else if (key.leftArrow) {
 			fm.focusPrevious();
-			// setInput("←");
-		} else if (key.tab) {
-			// setInput((key.shift ? "shift + " : "") + "tab");
 		}
 	});
 
