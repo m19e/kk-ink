@@ -45,7 +45,7 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 					Esc to reset focus.
 				</Text>
 			</Box>
-			<Box>
+			<Box width="80%" justifyContent="space-around">
 				<Item label=" はい " onFocus={handleFocus} />
 				<Item label="いいえ" onFocus={handleFocus} />
 				{/* <Box padding={2}>
