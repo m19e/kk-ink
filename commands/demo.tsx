@@ -3,7 +3,7 @@ import { Box, Text, useInput, useFocusManager, useFocus } from "ink";
 
 /// Focus demo command
 const Focus = () => {
-	const [focus, setFocus] = useState("initial");
+	const [focus, setFocus] = useState<undefined | string>(undefined);
 	const fm = useFocusManager();
 
 	useInput((_, key) => {
@@ -11,6 +11,8 @@ const Focus = () => {
 			fm.focusNext();
 		} else if (key.leftArrow) {
 			fm.focusPrevious();
+		} else if (key.escape) {
+			setFocus(undefined);
 		}
 	});
 
@@ -31,7 +33,7 @@ const Focus = () => {
 				<Item label="Second" onFocus={handleFocus} />
 				<Item label="Third" onFocus={handleFocus} />
 				<Box padding={2}>
-					<Text>{focus}</Text>
+					<Text>{focus && focus}</Text>
 				</Box>
 			</Box>
 		</Box>
