@@ -58,7 +58,7 @@ const Item: FC<{ label: string; onFocus: (id: string) => void }> = ({
 			paddingY={1}
 			justifyContent="center"
 			borderStyle="round"
-			borderColor={isFocused ? "green" : undefined}
+			borderColor={isFocused ? "green" : "white"}
 		>
 			<Text>{label}</Text>
 		</Box>
