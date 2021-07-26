@@ -38,19 +38,40 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 	};
 
 	return (
-		<Box flexDirection="column" padding={1}>
-			<Box marginBottom={1}>
+		<Box
+			flexDirection="column"
+			justifyContent="space-between"
+			minHeight={22}
+			padding={1}
+			borderStyle="bold"
+			borderColor="white"
+		>
+			{/* <Box marginBottom={1}>
 				<Text>
 					Press Tab to focus next element, Shift+Tab to focus previous element,
 					Esc to reset focus.
 				</Text>
-			</Box>
-			<Box width="80%" justifyContent="space-around">
-				<Item label=" はい " onFocus={handleFocus} />
-				<Item label="いいえ" onFocus={handleFocus} />
-				{/* <Box padding={2}>
+			</Box> */}
+			<Box flexGrow={1} justifyContent="center" alignItems="center">
+				<Box width="90%" justifyContent="space-between">
+					<Item label="いいよ" onFocus={handleFocus} />
+					<Item label="ごめん" onFocus={handleFocus} />
+					{/* <Box padding={2}>
 					<Text>{focus && focus}</Text>
 				</Box> */}
+				</Box>
+			</Box>
+			<Box justifyContent="center">
+				<Box width="70%" flexDirection="column">
+					<Box>
+						<Box borderStyle="round" paddingX={4}>
+							<Text>めぐる</Text>
+						</Box>
+					</Box>
+					<Box height={5} borderStyle="round" paddingX={2}>
+						<Text>お休み、もらっちゃダメかな？</Text>
+					</Box>
+				</Box>
 			</Box>
 		</Box>
 	);
@@ -70,8 +91,8 @@ const Item: FC<{ label: string; onFocus: (id: string) => void }> = ({
 
 	return (
 		<Box
-			paddingX={4}
-			paddingY={1}
+			paddingX={7}
+			paddingY={2}
 			justifyContent="center"
 			borderStyle="round"
 			borderColor={isFocused ? "green" : "white"}
