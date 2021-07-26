@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { Box, Text, useInput, useFocusManager, useFocus } from "ink";
 
 /// Focus demo command
@@ -38,8 +38,9 @@ const Focus = () => {
 	);
 };
 
-const Item = ({ label }: { label: string }) => {
+const Item: FC<{ label: string }> = ({ label }) => {
 	const { isFocused } = useFocus();
+
 	return (
 		<Box
 			paddingX={3}
