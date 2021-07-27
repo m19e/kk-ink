@@ -93,6 +93,8 @@ const Focus: FC<{ onSubmit: (id: string) => void; data: ConfirmData }> = ({
 		setFocus(id);
 	};
 
+	if (width === 0 || height === 0) return null;
+
 	return (
 		<Box
 			flexDirection="column"
