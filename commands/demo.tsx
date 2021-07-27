@@ -100,8 +100,16 @@ const Focus: FC<{ onSubmit: (id: string) => void; data: ConfirmData }> = ({
 			</Box> */}
 			<Box flexGrow={1} justifyContent="center" alignItems="center">
 				<Box width="90%" justifyContent="space-between">
-					<Item label="いいよ" small={width < 70} onFocus={handleFocus} />
-					<Item label="ごめん" small={width < 70} onFocus={handleFocus} />
+					<Item
+						label={data.former.label}
+						small={width < 70}
+						onFocus={handleFocus}
+					/>
+					<Item
+						label={data.latter.label}
+						small={width < 70}
+						onFocus={handleFocus}
+					/>
 				</Box>
 			</Box>
 			<Box justifyContent="center">
@@ -114,7 +122,7 @@ const Focus: FC<{ onSubmit: (id: string) => void; data: ConfirmData }> = ({
 							paddingX={4}
 							marginBottom={-1}
 						>
-							<Text>めぐる{[width, height]}</Text>
+							<Text>{data.talker}</Text>
 						</Box>
 					</Box>
 					<Box
@@ -123,7 +131,7 @@ const Focus: FC<{ onSubmit: (id: string) => void; data: ConfirmData }> = ({
 						borderColor="white"
 						paddingX={2}
 					>
-						<Text>お休み、もらっちゃダメかな？</Text>
+						<Text>{data.message}</Text>
 					</Box>
 				</Box>
 			</Box>
