@@ -28,7 +28,7 @@ const Demo = () => {
 			onSubmit={handleSubmit}
 			data={{
 				talker: "KK",
-				message: "まだ読めない漢字があるみたいです。ここで終了しますか？",
+				message: ["まだ読めない漢字があるみたいです。", "終了しますか？"],
 				former: {
 					id: "continue",
 					label: "続ける",
@@ -49,7 +49,7 @@ type ConfirmDataItem = {
 
 type ConfirmData = {
 	talker: string;
-	message: string;
+	message: string | string[];
 	former: ConfirmDataItem;
 	latter: ConfirmDataItem;
 };
