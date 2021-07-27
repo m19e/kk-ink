@@ -68,7 +68,12 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 			<Box justifyContent="center">
 				<Box width="70%" flexDirection="column">
 					<Box>
-						<Box borderStyle="round" paddingX={4}>
+						<Box
+							minHeight={3}
+							borderStyle="round"
+							paddingX={4}
+							marginBottom={-1}
+						>
 							<Text>めぐる{width}</Text>
 						</Box>
 					</Box>
