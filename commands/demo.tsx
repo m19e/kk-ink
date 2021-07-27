@@ -103,8 +103,8 @@ const Item: FC<{
 
 	return (
 		<Box
-			paddingX={7}
-			paddingY={2}
+			paddingX={small ? 4 : 7}
+			paddingY={small ? 1 : 2}
 			justifyContent="center"
 			borderStyle="round"
 			borderColor={isFocused ? "green" : "white"}
