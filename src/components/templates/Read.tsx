@@ -6,6 +6,7 @@ import { parse, join } from "path";
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { COMPULSORY } from "../../consts";
 import { CustomField } from "../../types";
+import Confirm from "../organisms/Confirm";
 import Form from "../molecules/Form";
 import Logo from "../atoms/Logo";
 
@@ -89,9 +90,18 @@ const Read: FC<{ file: string }> = ({ file }) => {
 			setFormSections(sections);
 			setBuffer(buf);
 
-			// setStatus("confirm")
+			setStatus("confirm");
 		} else {
 			writeFileSync(outputFile, buf);
+			setStatus("submit");
+		}
+	};
+
+	const handleConfirm = (con: boolean) => {
+		if (con) {
+			setStatus("edit");
+		} else {
+			writeFileSync(outputFile, buffer);
 			setStatus("submit");
 		}
 	};
@@ -116,7 +126,7 @@ const Read: FC<{ file: string }> = ({ file }) => {
 				</>
 			)}
 			{status === "edit" && <Form formData={formSections} update={update} />}
-			{status === "confirm" && null}
+			{status === "confirm" && <Confirm onConfirm={handleConfirm} />}
 			{status === "submit" && (
 				<Box flexDirection="column">
 					<Box paddingX={3} paddingY={1} borderStyle="bold">
