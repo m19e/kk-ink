@@ -50,7 +50,6 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 			justifyContent="space-between"
 			width={width > 100 ? 100 : width}
 			minHeight={width > 100 ? 25 : width / 4}
-			padding={1}
 			borderStyle="bold"
 			borderColor="white"
 		>
