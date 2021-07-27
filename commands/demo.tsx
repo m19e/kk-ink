@@ -87,7 +87,13 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 							<Text>めぐる{width}</Text>
 						</Box>
 					</Box>
-					<Box height={5} borderStyle="round" paddingX={2}>
+					<Box
+						height={
+							width < 70 || Math.min(height, 20, width / 4) === height ? 4 : 5
+						}
+						borderStyle="round"
+						paddingX={2}
+					>
 						<Text>お休み、もらっちゃダメかな？</Text>
 					</Box>
 				</Box>
