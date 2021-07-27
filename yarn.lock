@@ -3321,6 +3321,11 @@ ink-text-input@^4.0.1:
     chalk "^4.1.0"
     type-fest "^0.15.1"
 
+ink-use-stdout-dimensions@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/ink-use-stdout-dimensions/-/ink-use-stdout-dimensions-1.0.5.tgz#7739876c00284840601c4150aa84eb7adc143de2"
+  integrity sha512-rVsqnw4tQEAJUoknU09+zHdDf30GJdkumkHr0iz/TOYMYEZJkYqziQSGJAM+Z+M603EDfO89+Nxyn/Ko2Zknfw==
+
 ink@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/ink/-/ink-3.0.8.tgz#c527957c8fa4efcc139b67a4cbba7bb8a62b18b0"
