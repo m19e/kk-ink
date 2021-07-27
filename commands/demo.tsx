@@ -63,8 +63,16 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 			</Box> */}
 			<Box flexGrow={1} justifyContent="center" alignItems="center">
 				<Box width="90%" justifyContent="space-between">
-					<Item label="いいよ" onFocus={handleFocus} />
-					<Item label="ごめん" onFocus={handleFocus} />
+					<Item
+						label="いいよ"
+						small={width < 70 || Math.min(height, 20, width / 4) === height}
+						onFocus={handleFocus}
+					/>
+					<Item
+						label="ごめん"
+						small={width < 70 || Math.min(height, 20, width / 4) === height}
+						onFocus={handleFocus}
+					/>
 				</Box>
 			</Box>
 			<Box justifyContent="center">
