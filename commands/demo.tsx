@@ -48,7 +48,8 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 		<Box
 			flexDirection="column"
 			justifyContent="space-between"
-			height={width / 4}
+			minWidth={width > 100 ? 100 : width}
+			minHeight={width > 100 ? 25 : width / 4}
 			padding={1}
 			borderStyle="bold"
 			borderColor="white"
