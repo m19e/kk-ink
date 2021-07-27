@@ -70,16 +70,8 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 			</Box> */}
 			<Box flexGrow={1} justifyContent="center" alignItems="center">
 				<Box width="90%" justifyContent="space-between">
-					<Item
-						label="いいよ"
-						small={width < 70 || Math.min(height, 20, width / 4) === height}
-						onFocus={handleFocus}
-					/>
-					<Item
-						label="ごめん"
-						small={width < 70 || Math.min(height, 20, width / 4) === height}
-						onFocus={handleFocus}
-					/>
+					<Item label="いいよ" small={width < 70} onFocus={handleFocus} />
+					<Item label="ごめん" small={width < 70} onFocus={handleFocus} />
 				</Box>
 			</Box>
 			<Box justifyContent="center">
@@ -94,13 +86,7 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 							<Text>めぐる{[width, height]}</Text>
 						</Box>
 					</Box>
-					<Box
-						height={
-							width < 70 || Math.min(height, 20, width / 4) === height ? 4 : 5
-						}
-						borderStyle="round"
-						paddingX={2}
-					>
+					<Box height={width < 70 ? 4 : 5} borderStyle="round" paddingX={2}>
 						<Text>お休み、もらっちゃダメかな？</Text>
 					</Box>
 				</Box>
