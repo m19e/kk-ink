@@ -1,5 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import { Box, Text, useInput, useFocusManager, useFocus } from "ink";
+import useStdoutDimensions from "ink-use-stdout-dimensions";
 
 /// Focus demo command
 const Demo = () => {
@@ -22,11 +23,9 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 	const { focusNext, focusPrevious } = useFocusManager();
 	const [width, setWidth] = useState(0);
 	const [height, setHeight] = useState(0);
+	const [w, h] = useStdoutDimensions();
 
 	useEffect(() => {
-		const w = process.stdout.columns;
-		const h = process.stdout.rows;
-
 		if (w < h * 4) {
 			setWidth(Math.min(80, w));
 			setHeight(Math.min(h, 20, w / 4));
@@ -34,7 +33,7 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 			setWidth(Math.min(w, 80, h * 4));
 			setHeight(Math.min(h, 20));
 		}
-	}, []);
+	}, [w, h]);
 
 	useInput((_, key) => {
 		if (key.rightArrow) {
