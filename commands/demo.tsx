@@ -28,7 +28,7 @@ const Demo = () => {
 			onSubmit={handleSubmit}
 			data={{
 				talker: "KK",
-				message: ["まだ読めない漢字があるみたいです。", "終了しますか？"],
+				message: ["まだ読めない漢字があるみたいです", "終了しますか？"],
 				former: {
 					id: "continue",
 					label: "続ける",
@@ -116,7 +116,7 @@ const Focus: FC<{ onSubmit: (id: string) => void; data: ConfirmData }> = ({
 							minHeight={3}
 							borderStyle="round"
 							borderColor="white"
-							paddingX={4}
+							paddingX={3}
 							marginBottom={-1}
 						>
 							<Text>{data.talker}</Text>

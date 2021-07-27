@@ -115,7 +115,7 @@ const Focus: FC<{ onSubmit: (id: string) => void; data: ConfirmData }> = ({
 							minHeight={3}
 							borderStyle="round"
 							borderColor="white"
-							paddingX={4}
+							paddingX={3}
 							marginBottom={-1}
 						>
 							<Text>{data.talker}</Text>
