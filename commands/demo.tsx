@@ -18,18 +18,20 @@ const Demo = () => {
 
 const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 	const [focus, setFocus] = useState<undefined | string>(undefined);
+	const [canSubmit, setCanSubmit] = useState(false);
 	const { focusNext, focusPrevious } = useFocusManager();
 
 	useInput((_, key) => {
 		if (key.rightArrow) {
 			focusNext();
+			setCanSubmit(true);
 		} else if (key.leftArrow) {
 			focusPrevious();
+			setCanSubmit(true);
 		} else if (key.escape) {
-			setFocus(undefined);
+			setCanSubmit(false);
 		} else if (key.return) {
-			if (typeof focus === "undefined") return;
-			onSubmit(focus);
+			if (canSubmit) onSubmit(focus);
 		}
 	});
 
