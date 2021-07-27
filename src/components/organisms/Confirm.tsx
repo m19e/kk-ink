@@ -10,17 +10,6 @@ const Confirm: FC<{ onConfirm: (con: boolean) => void }> = ({ onConfirm }) => {
 		onConfirm(id === "continue");
 	};
 
-	if (submit)
-		return (
-			<Box>
-				<Box paddingX={1} borderStyle="round" borderColor="white">
-					<Text>
-						result is <Text color="green">{result}</Text>!
-					</Text>
-				</Box>
-			</Box>
-		);
-
 	return (
 		<ConfirmWindow
 			onSubmit={handleSubmit}
