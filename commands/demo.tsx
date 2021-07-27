@@ -140,15 +140,15 @@ const Focus: FC<{ onSubmit: (id: string) => void; data: ConfirmData }> = ({
 };
 
 const Item: FC<{
-	label: string;
+	item: ConfirmDataItem;
 	small: boolean;
 	onFocus: (id: string) => void;
-}> = ({ label, small, onFocus }) => {
+}> = ({ item, small, onFocus }) => {
 	const { isFocused } = useFocus();
 
 	useEffect(() => {
 		if (isFocused) {
-			onFocus(label);
+			onFocus(item.label);
 		}
 	}, [isFocused]);
 
@@ -160,7 +160,7 @@ const Item: FC<{
 			borderStyle="round"
 			borderColor={isFocused ? "green" : "white"}
 		>
-			<Text>{label}</Text>
+			<Text>{item.label}</Text>
 		</Box>
 	);
 };
