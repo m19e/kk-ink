@@ -2,13 +2,12 @@ import React, { FC, useState, useEffect } from "react";
 import { Box, Text, useInput, useFocusManager, useFocus } from "ink";
 import useStdoutDimensions from "ink-use-stdout-dimensions";
 
-const Confirm = () => {
+const Confirm: FC<{ onConfirm: (con: boolean) => void }> = ({ onConfirm }) => {
 	const [result, setResult] = useState("");
 	const [submit, setSubmited] = useState(false);
 
 	const handleSubmit = (id: string) => {
-		setResult(id);
-		setSubmited(true);
+		onConfirm(id === "continue");
 	};
 
 	if (submit)
