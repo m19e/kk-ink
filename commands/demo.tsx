@@ -100,16 +100,8 @@ const Focus: FC<{ onSubmit: (id: string) => void; data: ConfirmData }> = ({
 			</Box> */}
 			<Box flexGrow={1} justifyContent="center" alignItems="center">
 				<Box width="90%" justifyContent="space-between">
-					<Item
-						label={data.former.label}
-						small={width < 70}
-						onFocus={handleFocus}
-					/>
-					<Item
-						label={data.latter.label}
-						small={width < 70}
-						onFocus={handleFocus}
-					/>
+					<Item item={data.former} small={width < 70} onFocus={handleFocus} />
+					<Item item={data.latter} small={width < 70} onFocus={handleFocus} />
 				</Box>
 			</Box>
 			<Box justifyContent="center">
