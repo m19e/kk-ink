@@ -12,7 +12,16 @@ const Demo = () => {
 		setSubmited(true);
 	};
 
-	if (submit) return <Text>result is {result}!</Text>;
+	if (submit)
+		return (
+			<Box>
+				<Box paddingX={1} borderStyle="round" borderColor="white">
+					<Text>
+						result is <Text color="green">{result}</Text>!
+					</Text>
+				</Box>
+			</Box>
+		);
 
 	return (
 		<Focus
