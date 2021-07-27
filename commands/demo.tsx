@@ -20,6 +20,11 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 	const [focus, setFocus] = useState<undefined | string>(undefined);
 	const [canSubmit, setCanSubmit] = useState(false);
 	const { focusNext, focusPrevious } = useFocusManager();
+	const [width, setWidth] = useState(0);
+
+	useEffect(() => {
+		setWidth(process.stdout.columns);
+	}, []);
 
 	useInput((_, key) => {
 		if (key.rightArrow) {
@@ -43,7 +48,7 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 		<Box
 			flexDirection="column"
 			justifyContent="space-between"
-			minHeight={22}
+			height={width / 4}
 			padding={1}
 			borderStyle="bold"
 			borderColor="white"
@@ -67,7 +72,7 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 				<Box width="70%" flexDirection="column">
 					<Box>
 						<Box borderStyle="round" paddingX={4}>
-							<Text>めぐる</Text>
+							<Text>めぐる{width}</Text>
 						</Box>
 					</Box>
 					<Box height={5} borderStyle="round" paddingX={2}>
