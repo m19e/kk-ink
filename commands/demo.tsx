@@ -63,9 +63,6 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 				<Box width="90%" justifyContent="space-between">
 					<Item label="いいよ" onFocus={handleFocus} />
 					<Item label="ごめん" onFocus={handleFocus} />
-					{/* <Box padding={2}>
-					<Text>{focus && focus}</Text>
-				</Box> */}
 				</Box>
 			</Box>
 			<Box justifyContent="center">
