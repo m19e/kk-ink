@@ -140,7 +140,7 @@ const Item: FC<{
 
 	useEffect(() => {
 		if (isFocused) {
-			onFocus(item.label);
+			onFocus(item.id);
 		}
 	}, [isFocused]);
 
