@@ -84,7 +84,7 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 							paddingX={4}
 							marginBottom={-1}
 						>
-							<Text>めぐる{width}</Text>
+							<Text>めぐる{[width, height]}</Text>
 						</Box>
 					</Box>
 					<Box
