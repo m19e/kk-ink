@@ -3,9 +3,6 @@ import { Box, Text, useInput, useFocusManager, useFocus } from "ink";
 import useStdoutDimensions from "ink-use-stdout-dimensions";
 
 const Confirm: FC<{ onConfirm: (con: boolean) => void }> = ({ onConfirm }) => {
-	const [result, setResult] = useState("");
-	const [submit, setSubmited] = useState(false);
-
 	const handleSubmit = (id: string) => {
 		onConfirm(id === "continue");
 	};
