@@ -88,10 +88,11 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 	);
 };
 
-const Item: FC<{ label: string; onFocus: (id: string) => void }> = ({
-	label,
-	onFocus,
-}) => {
+const Item: FC<{
+	label: string;
+	small: boolean;
+	onFocus: (id: string) => void;
+}> = ({ label, small, onFocus }) => {
 	const { isFocused } = useFocus();
 
 	useEffect(() => {
