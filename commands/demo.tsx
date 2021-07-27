@@ -21,12 +21,12 @@ const Demo = () => {
 				talker: "KK",
 				message: "まだ読めない漢字があるみたいです。ここで終了しますか？",
 				former: {
-					id: "yes",
-					label: " はい ",
+					id: "continue",
+					label: "続ける",
 				},
 				latter: {
-					id: "no",
-					label: "いいえ",
+					id: "quit",
+					label: "終わる",
 				},
 			}}
 		/>
