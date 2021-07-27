@@ -24,8 +24,16 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 	const [height, setHeight] = useState(0);
 
 	useEffect(() => {
-		setWidth(process.stdout.columns);
-		setHeight(process.stdout.rows);
+		const w = process.stdout.columns;
+		const h = process.stdout.rows;
+
+		if (w < h * 4) {
+			setWidth(Math.min(80, w));
+			setHeight(Math.min(h, 20, w / 4));
+		} else {
+			setWidth(Math.min(w, 80, h * 4));
+			setHeight(Math.min(h, 20));
+		}
 	}, []);
 
 	useInput((_, key) => {
@@ -49,9 +57,8 @@ const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
 	return (
 		<Box
 			flexDirection="column"
-			justifyContent="space-between"
-			width={Math.min(80, width)}
-			height={Math.min(height, 20, width / 4)}
+			width={width}
+			minHeight={height}
 			borderStyle="bold"
 			borderColor="white"
 		>
