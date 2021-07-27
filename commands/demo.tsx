@@ -130,11 +130,20 @@ const Focus: FC<{ onSubmit: (id: string) => void; data: ConfirmData }> = ({
 					</Box>
 					<Box
 						height={width < 70 ? 4 : 5}
+						flexDirection="column"
 						borderStyle="round"
 						borderColor="white"
 						paddingX={2}
 					>
-						<Text>{data.message}</Text>
+						{typeof data.message === "string" ? (
+							<Text>{data.message}</Text>
+						) : (
+							<>
+								{data.message.map((m, i) => (
+									<Text key={i}>{m}</Text>
+								))}
+							</>
+						)}
 					</Box>
 				</Box>
 			</Box>
