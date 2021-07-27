@@ -14,10 +14,41 @@ const Demo = () => {
 
 	if (submit) return <Text>result is {result}!</Text>;
 
-	return <Focus onSubmit={handleSubmit} />;
+	return (
+		<Focus
+			onSubmit={handleSubmit}
+			data={{
+				talker: "KK",
+				message: "まだ読めない漢字があるみたいです。ここで終了しますか？",
+				former: {
+					id: "yes",
+					label: " はい ",
+				},
+				latter: {
+					id: "no",
+					label: "いいえ",
+				},
+			}}
+		/>
+	);
 };
 
-const Focus: FC<{ onSubmit: (id: string) => void }> = ({ onSubmit }) => {
+type ConfirmDataItem = {
+	id: string;
+	label: string;
+};
+
+type ConfirmData = {
+	talker: string;
+	message: string;
+	former: ConfirmDataItem;
+	latter: ConfirmDataItem;
+};
+
+const Focus: FC<{ onSubmit: (id: string) => void; data: ConfirmData }> = ({
+	onSubmit,
+	data,
+}) => {
 	const [focus, setFocus] = useState<undefined | string>(undefined);
 	const [canSubmit, setCanSubmit] = useState(false);
 	const { focusNext, focusPrevious } = useFocusManager();
