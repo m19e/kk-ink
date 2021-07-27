@@ -103,12 +103,6 @@ const Focus: FC<{ onSubmit: (id: string) => void; data: ConfirmData }> = ({
 			borderStyle="bold"
 			borderColor="white"
 		>
-			{/* <Box marginBottom={1}>
-				<Text>
-					Press Tab to focus next element, Shift+Tab to focus previous element,
-					Esc to reset focus.
-				</Text>
-			</Box> */}
 			<Box flexGrow={1} justifyContent="center" alignItems="center">
 				<Box width="90%" justifyContent="space-between">
 					<Item item={data.former} small={width < 70} onFocus={handleFocus} />
