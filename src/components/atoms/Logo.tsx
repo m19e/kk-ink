@@ -4,11 +4,9 @@ import Gradient from "ink-gradient";
 import BigText from "ink-big-text";
 
 const Logo = () => (
-	<Box justifyContent="center">
-		<Gradient name="fruit">
-			<BigText text="kk" />
-		</Gradient>
-	</Box>
+	<Gradient name="fruit">
+		<BigText text="kk" />
+	</Gradient>
 );
 
 export default Logo;
