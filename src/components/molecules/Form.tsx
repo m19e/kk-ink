@@ -12,49 +12,45 @@ import TextInput from "ink-text-input";
 const FormProvider: FC<{
 	formData: FormSection[];
 	update: (obj: object) => void;
-}> = ({ formData, update }) => {
-	if (!formData.length) return null;
+}> = ({ formData, update }) => (
+	<Form
+		onSubmit={(value) => update(value)}
+		customManagers={[
+			{
+				type: "custom",
+				renderValue: ({
+					value,
+				}: FormFieldValueRendererProps<FormFieldString>) => <>{value}</>,
+				renderField: ({
+					value,
+					field: { regex, placeholder },
+					onChange,
+					onError,
+					onClearError,
+				}: SpecificFormFieldRendererProps<FormFieldString>) => (
+					<Box padding={1}>
+						<TextInput
+							value={value ?? ""}
+							onChange={(value) => {
+								onChange(value);
 
-	return (
-		<Form
-			onSubmit={(value) => update(value)}
-			customManagers={[
-				{
-					type: "custom",
-					renderValue: ({
-						value,
-					}: FormFieldValueRendererProps<FormFieldString>) => <>{value}</>,
-					renderField: ({
-						value,
-						field: { regex, placeholder },
-						onChange,
-						onError,
-						onClearError,
-					}: SpecificFormFieldRendererProps<FormFieldString>) => (
-						<Box padding={1}>
-							<TextInput
-								value={value ?? ""}
-								onChange={(value) => {
-									onChange(value);
-
-									if (!value.match(regex)) {
-										onError(`Invaid value, should be Hiragana or Katakana`);
-									} else {
-										onClearError();
-									}
-								}}
-								placeholder={placeholder}
-							/>
-						</Box>
-					),
-				},
-			]}
-			form={{
-				title: "Teach me Kanji reading!",
-				sections: formData,
-			}}
-		/>
-	);
-};
+								if (!value.match(regex)) {
+									onError(`Invaid value, should be Hiragana or Katakana`);
+								} else {
+									onClearError();
+								}
+							}}
+							placeholder={placeholder}
+						/>
+					</Box>
+				),
+			},
+		]}
+		form={{
+			title: "Teach me Kanji reading!",
+			sections: formData,
+		}}
+	/>
+);
 
 export default FormProvider;
