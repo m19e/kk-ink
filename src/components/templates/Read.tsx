@@ -71,12 +71,8 @@ const Read: FC<{ file: string }> = ({ file }) => {
 		setBuffer(buf);
 		setFormSections(() => convertBufferToFormSections(buf));
 
-		setTimeout(() => {
-			setLoading(false);
-			setTimeout(() => {
-				setStatus("edit");
-			}, 1500);
-		}, 2000);
+		setLoading(false);
+		setStatus("edit");
 	}, []);
 
 	const update = (submit: object) => {
