@@ -108,22 +108,20 @@ const Read: FC<{ file: string }> = ({ file }) => {
 
 	return (
 		<>
+			<Logo />
 			{status === "load" && (
-				<>
-					<Logo />
-					<Text>
-						{loading ? (
-							<>
-								<Text color="green">
-									<Spinner type="dots" />
-								</Text>
-								<Text>「{file}」を読み込んでますっ</Text>
-							</>
-						) : (
-							<Text> ✔️「{file}」を読み込みました！</Text>
-						)}
-					</Text>
-				</>
+				<Text>
+					{loading ? (
+						<>
+							<Text color="green">
+								<Spinner type="dots" />
+							</Text>
+							<Text>「{file}」を読み込んでますっ</Text>
+						</>
+					) : (
+						<Text> ✔️「{file}」を読み込みました！</Text>
+					)}
+				</Text>
 			)}
 			{status === "edit" && <Form formData={formSections} update={update} />}
 			{status === "confirm" && <Confirm onConfirm={handleConfirm} />}
