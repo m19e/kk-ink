@@ -9,7 +9,7 @@ import {
 } from "../../ink/form";
 import TextInput from "ink-text-input";
 
-const FormDemoCustom: FC<{
+const FormProvider: FC<{
 	formData: FormSection[];
 	update: (obj: object) => void;
 }> = ({ formData, update }) => {
@@ -57,4 +57,4 @@ const FormDemoCustom: FC<{
 	);
 };
 
-export default FormDemoCustom;
+export default FormProvider;
