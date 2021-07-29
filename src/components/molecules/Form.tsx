@@ -35,7 +35,7 @@ const FormProvider: FC<{
 								onChange(value);
 
 								if (!value.match(regex)) {
-									onError(`Invaid value, should be Hiragana or Katakana`);
+									onError(`ひらがなかカタカナでお願いします！`);
 								} else {
 									onClearError();
 								}
@@ -47,7 +47,7 @@ const FormProvider: FC<{
 			},
 		]}
 		form={{
-			title: "Teach me Kanji reading!",
+			title: "漢字の読みを教えてくださいっ",
 			sections: formData,
 		}}
 	/>
