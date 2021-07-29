@@ -120,7 +120,7 @@ const Read: FC<{ file: string }> = ({ file }) => {
 								<Text>「{file}」を読み込んでますっ</Text>
 							</>
 						) : (
-							<Text> ✔「{file}」を読み込みました！</Text>
+							<Text> ✔️「{file}」を読み込みました！</Text>
 						)}
 					</Text>
 				</>
