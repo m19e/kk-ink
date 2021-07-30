@@ -29,7 +29,7 @@ export const FormHeader: React.FC<
   );
 
   return (
-    <Box width="100%" borderStyle="double" flexDirection="column">
+    <Box width="100%" borderStyle="double" borderColor="white" flexDirection="column">
       <Box width="100%">
         <Box flexGrow={1}>
           <Text bold={true}>{props.form.title}</Text>
