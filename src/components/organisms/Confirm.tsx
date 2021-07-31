@@ -91,11 +91,13 @@ const ConfirmWindow: FC<{ onSubmit: (id: string) => void; data: ConfirmData }> =
 							<Item
 								item={data.former}
 								small={width < 70}
+								frameColor="#46b76d"
 								onFocus={handleFocus}
 							/>
 							<Item
 								item={data.latter}
 								small={width < 70}
+								frameColor="#ed73a7"
 								onFocus={handleFocus}
 							/>
 						</Box>
