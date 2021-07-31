@@ -137,6 +137,27 @@ const ConfirmWindow: FC<{ onSubmit: (id: string) => void; data: ConfirmData }> =
 		);
 	};
 
+type ForegroundColor =
+	| "black"
+	| "red"
+	| "green"
+	| "yellow"
+	| "blue"
+	| "magenta"
+	| "cyan"
+	| "white"
+	| "gray"
+	| "grey"
+	| "blackBright"
+	| "redBright"
+	| "greenBright"
+	| "yellowBright"
+	| "blueBright"
+	| "magentaBright"
+	| "cyanBright"
+	| "whiteBright"
+	| string;
+
 const Item: FC<{
 	item: ConfirmDataItem;
 	small: boolean;
