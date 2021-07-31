@@ -78,48 +78,58 @@ const ConfirmWindow: FC<{ onSubmit: (id: string) => void; data: ConfirmData }> =
 		if (width === 0 || height === 0) return null;
 
 		return (
-			<Box
-				flexDirection="column"
-				width={width}
-				minHeight={height}
-				borderStyle="bold"
-				borderColor="white"
-			>
-				<Box flexGrow={1} justifyContent="center" alignItems="center">
-					<Box width="90%" justifyContent="space-between">
-						<Item item={data.former} small={width < 70} onFocus={handleFocus} />
-						<Item item={data.latter} small={width < 70} onFocus={handleFocus} />
+			<Box width="100%" justifyContent="center">
+				<Box
+					flexDirection="column"
+					width={width}
+					minHeight={height}
+					borderStyle="bold"
+					borderColor="white"
+				>
+					<Box flexGrow={1} justifyContent="center" alignItems="center">
+						<Box width="90%" justifyContent="space-between">
+							<Item
+								item={data.former}
+								small={width < 70}
+								onFocus={handleFocus}
+							/>
+							<Item
+								item={data.latter}
+								small={width < 70}
+								onFocus={handleFocus}
+							/>
+						</Box>
 					</Box>
-				</Box>
-				<Box justifyContent="center">
-					<Box width="70%" flexDirection="column">
-						<Box>
+					<Box justifyContent="center">
+						<Box width="70%" flexDirection="column">
+							<Box>
+								<Box
+									minHeight={3}
+									borderStyle="round"
+									borderColor="white"
+									paddingX={3}
+									marginBottom={-1}
+								>
+									<Text>{data.talker}</Text>
+								</Box>
+							</Box>
 							<Box
-								minHeight={3}
+								height={width < 70 ? 4 : 5}
+								flexDirection="column"
 								borderStyle="round"
 								borderColor="white"
-								paddingX={3}
-								marginBottom={-1}
+								paddingX={2}
 							>
-								<Text>{data.talker}</Text>
+								{typeof data.message === "string" ? (
+									<Text>{data.message}</Text>
+								) : (
+									<>
+										{data.message.map((m, i) => (
+											<Text key={i}>{m}</Text>
+										))}
+									</>
+								)}
 							</Box>
-						</Box>
-						<Box
-							height={width < 70 ? 4 : 5}
-							flexDirection="column"
-							borderStyle="round"
-							borderColor="white"
-							paddingX={2}
-						>
-							{typeof data.message === "string" ? (
-								<Text>{data.message}</Text>
-							) : (
-								<>
-									{data.message.map((m, i) => (
-										<Text key={i}>{m}</Text>
-									))}
-								</>
-							)}
 						</Box>
 					</Box>
 				</Box>
