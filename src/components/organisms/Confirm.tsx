@@ -176,13 +176,26 @@ const Item: FC<{
 
 	return (
 		<Box
-			paddingX={small ? 4 : 7}
-			paddingY={small ? 1 : 2}
-			justifyContent="center"
+			height={7}
+			flexDirection="column"
+			justifyContent="flex-end"
 			borderStyle="round"
-			borderColor={isFocused ? frameColor : "white"}
+			borderColor={frameColor}
 		>
-			<Text>{item.label}</Text>
+			<Box paddingX={small ? 4 : 7}>
+				<Text>{item.label}</Text>
+			</Box>
+			<Box justifyContent="flex-end">
+				<Box
+					marginBottom={-1}
+					marginRight={-1}
+					paddingX={1}
+					borderStyle="round"
+					borderColor={frameColor}
+				>
+					<Text>{isFocused ? "✔️" : "　"}</Text>
+				</Box>
+			</Box>
 		</Box>
 	);
 };
