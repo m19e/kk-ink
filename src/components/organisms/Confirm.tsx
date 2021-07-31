@@ -161,8 +161,9 @@ type ForegroundColor =
 const Item: FC<{
 	item: ConfirmDataItem;
 	small: boolean;
+	frameColor: ForegroundColor;
 	onFocus: (id: string) => void;
-}> = ({ item, small, onFocus }) => {
+}> = ({ item, small, frameColor, onFocus }) => {
 	const { isFocused } = useFocus();
 
 	useEffect(() => {
@@ -177,7 +178,7 @@ const Item: FC<{
 			paddingY={small ? 1 : 2}
 			justifyContent="center"
 			borderStyle="round"
-			borderColor={isFocused ? "green" : "white"}
+			borderColor={isFocused ? frameColor : "white"}
 		>
 			<Text>{item.label}</Text>
 		</Box>
