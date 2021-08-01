@@ -40,7 +40,7 @@ const convertBufferToFormSections = (buf: string): FormSection[] =>
 					({
 						type: "custom",
 						name: t,
-						description: "Hiragana or Katakana",
+						// description: "Hiragana or Katakana",
 						regex: /^[\u3041-\u3096\u30A1-\u30FA]*$/,
 					} as CustomField)
 			),
