@@ -28,7 +28,7 @@ const FormProvider: FC<{
 					onError,
 					onClearError,
 				}: SpecificFormFieldRendererProps<FormFieldString>) => (
-					<Box padding={1}>
+					<Box borderStyle="round" width="100%">
 						<TextInput
 							value={value ?? ""}
 							onChange={(value) => {
