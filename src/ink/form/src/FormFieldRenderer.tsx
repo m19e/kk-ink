@@ -58,7 +58,7 @@ export const FormFieldRenderer: React.FC<FormFieldRendererProps<any>> = props =>
         marginX={1}
         paddingX={1}
         borderStyle="round"
-        borderColor={isFocused ? 'blue' : undefined}
+        borderColor={isFocused ? 'blue' : 'white'}
       >
         <Box flexGrow={1}>
           <Text underline={isFocused} color={isFocused ? 'blue' : undefined}>
