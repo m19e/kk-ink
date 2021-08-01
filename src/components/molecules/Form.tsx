@@ -34,7 +34,7 @@ const FormProvider: FC<{
 							onChange={(value) => {
 								onChange(value);
 
-								if (!value.match(regex)) {
+								if (regex && !value.match(regex)) {
 									onError(`ひらがなかカタカナでお願いします！`);
 								} else {
 									onClearError();
