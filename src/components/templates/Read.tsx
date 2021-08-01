@@ -123,7 +123,7 @@ const Read: FC<{ file: string }> = ({ file }) => {
 			{status === "confirm" && <Confirm onConfirm={handleConfirm} />}
 			{status === "submit" && (
 				<Box flexDirection="column">
-					<Box paddingX={3} paddingY={1} borderStyle="bold">
+					<Box paddingX={3} paddingY={1} borderStyle="bold" borderColor="white">
 						<Text>{buffer}</Text>
 					</Box>
 					<Text>「{outputFile}」に書き出しました！</Text>
