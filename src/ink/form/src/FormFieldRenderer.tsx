@@ -72,7 +72,7 @@ export const FormFieldRenderer: React.FC<FormFieldRendererProps<any>> = props =>
         </Box>
         {isFocused && (
           <Box>
-            <Text>Press enter to edit</Text>
+            <Text>Enter</Text>
           </Box>
         )}
       </Box>
