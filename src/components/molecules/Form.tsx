@@ -47,7 +47,7 @@ const FormProvider: FC<{
 			},
 		]}
 		form={{
-			title: "漢字の読み方、教えてくださいっ",
+			title: "漢字の読み方教えてくださいっ",
 			sections: formData,
 		}}
 	/>
