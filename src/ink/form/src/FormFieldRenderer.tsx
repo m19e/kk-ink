@@ -61,7 +61,7 @@ export const FormFieldRenderer: React.FC<FormFieldRendererProps<any>> = props =>
         borderColor={isFocused ? 'blue' : 'white'}
       >
         <Box flexGrow={1}>
-          <Text underline={isFocused} color={isFocused ? 'blue' : undefined}>
+          <Text underline={isFocused} color={isFocused ? 'blueBright' : undefined}>
             {props.field.label ?? props.field.name}
           </Text>
           {/* {props.field.required && <Text color="red">*</Text>} */}
