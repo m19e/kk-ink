@@ -99,10 +99,10 @@ export const FormFieldRenderer: React.FC<FormFieldRendererProps<any>> = props =>
 
     return (
       <Box paddingX={3} paddingY={1} flexDirection="column">
-        <Box paddingX={1}>
-          <Text>{props.field.label ?? props.field.name}</Text>
+        <Box>
+          <Text>「{props.field.label ?? props.field.name}」の読み</Text>
           {/* {props.field.required && <Text color="red">*</Text>} */}
-          <Text>: </Text>
+          {/* <Text>: </Text> */}
         </Box>
         <Box>{component}</Box>
         {props.field.description && (
