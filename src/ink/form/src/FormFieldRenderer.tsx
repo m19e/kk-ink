@@ -117,7 +117,7 @@ export const FormFieldRenderer: React.FC<FormFieldRendererProps<any>> = props =>
             <Text color="red">Error:{error}</Text>
           </Box>
         )}
-        <Box marginTop={2}>
+        <Box marginTop={error ? 1 : 2}>
           <Text dimColor>
             {error ? <>Esc:中止</> : <>{manager?.needCtrlToReturnSave ? 'CTRL+Enter' : 'Enter'}:決定　Esc:中止</>}
           </Text>
