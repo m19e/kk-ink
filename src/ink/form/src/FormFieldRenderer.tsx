@@ -99,7 +99,7 @@ export const FormFieldRenderer: React.FC<FormFieldRendererProps<any>> = props =>
 
     return (
       <Box paddingX={3} paddingY={1} flexDirection="column">
-        <Box>
+        <Box paddingX={1}>
           <Text>{props.field.label ?? props.field.name}</Text>
           {/* {props.field.required && <Text color="red">*</Text>} */}
           <Text>: </Text>
@@ -113,11 +113,11 @@ export const FormFieldRenderer: React.FC<FormFieldRendererProps<any>> = props =>
           </Box>
         )}
         {error && (
-          <Box>
+          <Box paddingX={1}>
             <Text color="red">Error:{error}</Text>
           </Box>
         )}
-        <Box marginTop={error ? 1 : 2}>
+        <Box marginTop={error ? 1 : 2} paddingX={1}>
           <Text dimColor>
             {error ? <>Esc:中止</> : <>{manager?.needCtrlToReturnSave ? 'CTRL+Enter' : 'Enter'}:決定　Esc:中止</>}
           </Text>
