@@ -114,7 +114,7 @@ export const FormFieldRenderer: React.FC<FormFieldRendererProps<any>> = props =>
         )}
         {error && (
           <Box>
-            <Text color="red">Error: {error}</Text>
+            <Text color="red">Error:{error}</Text>
           </Box>
         )}
         <Box marginTop={2}>
