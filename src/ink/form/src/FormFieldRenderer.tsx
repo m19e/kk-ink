@@ -119,11 +119,7 @@ export const FormFieldRenderer: React.FC<FormFieldRendererProps<any>> = props =>
         )}
         <Box marginTop={2}>
           <Text dimColor>
-            {error ? (
-              <>Press ESC to cancel.</>
-            ) : (
-              <>Press {manager?.needCtrlToReturnSave ? 'CTRL+Enter' : 'Enter'} to complete field, or ESC to cancel.</>
-            )}
+            {error ? <>Esc:中止</> : <>{manager?.needCtrlToReturnSave ? 'CTRL+Enter' : 'Enter'}:決定　Esc:中止</>}
           </Text>
         </Box>
       </Box>
