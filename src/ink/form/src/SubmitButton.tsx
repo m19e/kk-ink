@@ -23,7 +23,7 @@ export const SubmitButton: React.FC<{
       </Box>
       <Box borderStyle={'round'} borderColor={!props.canSubmit ? 'gray' : isFocused ? 'blue' : 'white'} paddingX={2}>
         <Text color={!props.canSubmit ? 'gray' : isFocused ? 'blue' : 'white'} bold={true} underline={isFocused}>
-          {props.canSubmit ? 'Submit form' : 'Cannot submit form yet'}
+          {props.canSubmit ? '終わる' : 'Cannot submit form yet'}
         </Text>
       </Box>
     </Box>
