@@ -122,7 +122,7 @@ const Read: FC<{ file: string }> = ({ file }) => {
 			{status === "edit" && <Form formData={formSections} update={update} />}
 			{status === "confirm" && <Confirm onConfirm={handleConfirm} />}
 			{status === "submit" && (
-				<Box flexDirection="column">
+				<Box flexDirection="column" marginBottom={2}>
 					<Box paddingX={3} paddingY={1} borderStyle="bold" borderColor="white">
 						<Text>{buffer}</Text>
 					</Box>
