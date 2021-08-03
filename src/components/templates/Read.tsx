@@ -126,7 +126,7 @@ const Read: FC<{ file: string }> = ({ file }) => {
 					<Box paddingX={3} paddingY={1} borderStyle="bold" borderColor="white">
 						<Text>{buffer}</Text>
 					</Box>
-					<Text>「{outputFile}」に書き出しました！</Text>
+					<Text>「{outputFile}」に保存しました！</Text>
 				</Box>
 			)}
 		</>
