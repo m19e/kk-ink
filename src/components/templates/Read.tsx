@@ -108,7 +108,6 @@ const Read: FC<{ file: string }> = ({ file }) => {
 
 	return (
 		<>
-			<Logo />
 			{status === "load" && (
 				<Text>
 					{loading ? (
@@ -123,10 +122,21 @@ const Read: FC<{ file: string }> = ({ file }) => {
 					)}
 				</Text>
 			)}
-			{status === "edit" && <Form formData={formSections} update={update} />}
-			{status === "confirm" && <Confirm onConfirm={handleConfirm} />}
+			{status === "edit" && (
+				<>
+					<Logo />
+					<Form formData={formSections} update={update} />
+				</>
+			)}
+			{status === "confirm" && (
+				<>
+					<Logo />
+					<Confirm onConfirm={handleConfirm} />
+				</>
+			)}
 			{status === "submit" && (
 				<Box flexDirection="column" marginBottom={2}>
+					<Logo />
 					<Box paddingX={3} paddingY={1} borderStyle="bold" borderColor="white">
 						<Text>{buffer}</Text>
 					</Box>
