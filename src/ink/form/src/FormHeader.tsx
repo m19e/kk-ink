@@ -53,7 +53,7 @@ export const FormHeader: React.FC<
             ))
           ) : (
             <Box>
-              <Text>Editing {props.editingField}</Text>
+              <Text dimColor>「{props.editingField}」を編集中です…</Text>
             </Box>
           )}
         </Box>
