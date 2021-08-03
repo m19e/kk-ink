@@ -44,7 +44,7 @@
     "react": "^17.0.1"
   },
   "dependencies": {
-    "ink": "^3.0.8",
+    "ink": "^3.0.9",
     "ink-multi-select": "^2.0.0",
     "ink-quicksearch-input": "^1.0.0",
     "ink-select-input": "^4.2.0",
